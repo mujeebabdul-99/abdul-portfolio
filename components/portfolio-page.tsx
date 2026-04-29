@@ -44,6 +44,9 @@ import {
 } from "react-icons/si";
 import { MdLaptopMac } from "react-icons/md";
 import { FiArrowUpRight } from "react-icons/fi";
+import { FiMoon, FiSun } from "react-icons/fi";
+import { FiChevronDown } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
 import {
   aboutSpecialties,
   faqs,
@@ -130,21 +133,36 @@ const techRows = [
 
 const heroSlides = [
   {
-    title: "UpAlerts Platform",
-    subtitle: "Upwork Job Alerts Tool that helps freelancers win more projects",
+    title: "Automate proposal discovery and win more quality projects.",
+    subtitle: "UpAlerts Platform",
     badge: "JOB ALERTS TOOL",
+    metrics: [
+      { value: "8k+", label: "Faster finance transactions" },
+      { value: "160h", label: "Lower expenses every month" },
+      { value: "2m", label: "Trusted regular users network" },
+    ],
     image: "/next.svg",
   },
   {
-    title: "Custom Gutenberg Blocks",
-    subtitle: "Dynamic WordPress blocks with seamless post rendering",
+    title: "Scale publishing workflows with custom Gutenberg systems.",
+    subtitle: "Custom Gutenberg Blocks",
     badge: "WORDPRESS PLUGIN",
+    metrics: [
+      { value: "10k+", label: "Blocks rendered across pages" },
+      { value: "240h", label: "Editing hours saved" },
+      { value: "4m", label: "Weekly content impressions" },
+    ],
     image: "/vercel.svg",
   },
   {
-    title: "WooCommerce Optimization",
-    subtitle: "Performance-focused eCommerce UI improvements and UX flow",
+    title: "Increase store conversions with a performance-first checkout UX.",
+    subtitle: "WooCommerce Optimization",
     badge: "E-COMMERCE",
+    metrics: [
+      { value: "5k+", label: "Orders processed monthly" },
+      { value: "125h", label: "Manual operations reduced" },
+      { value: "10m", label: "Revenue touchpoints optimized" },
+    ],
     image: "/globe.svg",
   },
 ];
@@ -153,10 +171,12 @@ function TechRow({
   row,
   reverse = false,
   speed = 22,
+  isLightMode = false,
 }: {
   row: { icon: React.ComponentType<{ className?: string }>; color: string }[];
   reverse?: boolean;
   speed?: number;
+  isLightMode?: boolean;
 }) {
   const doubledRow = [...row, ...row];
   const [isHovered, setIsHovered] = useState(false);
@@ -196,11 +216,23 @@ function TechRow({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#0a0d14] to-transparent sm:w-20" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#0a0d14] to-transparent sm:w-20" />
+      <div
+        className={`pointer-events-none absolute inset-y-0 left-0 z-10 w-12 sm:w-20 ${
+          isLightMode
+            ? "bg-gradient-to-r from-[#f6f8ff] via-[#f6f8fff5] to-transparent"
+            : "bg-gradient-to-r from-[#0a0d14] to-transparent"
+        }`}
+      />
+      <div
+        className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-12 sm:w-20 ${
+          isLightMode
+            ? "bg-gradient-to-l from-[#f6f8ff] via-[#f6f8fff5] to-transparent"
+            : "bg-gradient-to-l from-[#0a0d14] to-transparent"
+        }`}
+      />
       <motion.div
         ref={trackRef}
-        className="flex w-max gap-2.5 py-2 sm:gap-3"
+        className="flex w-max gap-3 py-2.5 sm:gap-3.5"
         style={{ x }}
       >
         {doubledRow.map((item, index) => {
@@ -210,9 +242,13 @@ function TechRow({
               key={`${item.color}-${index}`}
               whileHover={{ y: -2, scale: 1.04 }}
               transition={{ type: "spring", stiffness: 260, damping: 20 }}
-              className="grid h-[52px] w-[52px] place-items-center rounded-[13px] border border-white/10 bg-white/[0.03] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:h-14 sm:w-14"
+              className={`grid h-[60px] w-[60px] place-items-center rounded-[15px] border sm:h-[66px] sm:w-[66px] ${
+                isLightMode
+                  ? "border-black/10 bg-white/85 shadow-[0_12px_24px_rgba(15,23,42,0.08)]"
+                  : "border-white/10 bg-white/[0.03] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
+              }`}
             >
-              <Icon className={`h-5 w-5 ${item.color} sm:h-[22px] sm:w-[22px]`} />
+              <Icon className={`h-6 w-6 ${item.color} sm:h-7 sm:w-7`} />
             </motion.div>
           );
         })}
@@ -225,6 +261,7 @@ function TestimonialRow({
   items,
   reverse = false,
   speed = 16,
+  isLightMode = false,
 }: {
   items: {
     platform: string;
@@ -234,6 +271,7 @@ function TestimonialRow({
   }[];
   reverse?: boolean;
   speed?: number;
+  isLightMode?: boolean;
 }) {
   const tripled = [...items, ...items, ...items];
   const [isHovered, setIsHovered] = useState(false);
@@ -270,24 +308,46 @@ function TestimonialRow({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-[#0a0d14] via-[#0a0d14f0] to-transparent sm:w-28" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-[#0a0d14] via-[#0a0d14f0] to-transparent sm:w-28" />
+      <div
+        className={`pointer-events-none absolute inset-y-0 left-0 z-10 w-20 sm:w-28 ${
+          isLightMode
+            ? "bg-gradient-to-r from-[#f6f8ff] via-[#f6f8fff0] to-transparent"
+            : "bg-gradient-to-r from-[#0a0d14] via-[#0a0d14f0] to-transparent"
+        }`}
+      />
+      <div
+        className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-20 sm:w-28 ${
+          isLightMode
+            ? "bg-gradient-to-l from-[#f6f8ff] via-[#f6f8fff0] to-transparent"
+            : "bg-gradient-to-l from-[#0a0d14] via-[#0a0d14f0] to-transparent"
+        }`}
+      />
       <motion.div ref={trackRef} className="flex w-max gap-3 py-2" style={{ x }}>
         {tripled.map((item, index) => (
           <article
             key={`${item.name}-${index}`}
-            className="w-[300px] rounded-xl border border-white/10 bg-white/[0.04] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] will-change-transform"
+            className={`w-[300px] rounded-xl p-4 will-change-transform ${
+              isLightMode
+                ? "border border-black/10 bg-white/75 shadow-[0_12px_30px_rgba(15,23,42,0.08)]"
+                : "border border-white/10 bg-white/[0.04] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
+            }`}
           >
             <div className="flex items-center justify-between">
-              <p className="text-xs text-zinc-400">{item.platform}</p>
+              <p className={`text-xs ${isLightMode ? "text-zinc-500" : "text-zinc-400"}`}>
+                {item.platform}
+              </p>
               <p className="text-[11px] tracking-wide text-yellow-300">★★★★★</p>
             </div>
-            <p className="mt-2 text-sm leading-6 text-zinc-300">&ldquo;{item.quote}&rdquo;</p>
+            <p className={`mt-2 text-sm leading-6 ${isLightMode ? "text-zinc-700" : "text-zinc-300"}`}>
+              &ldquo;{item.quote}&rdquo;
+            </p>
             <div className="mt-4 flex items-center gap-2.5">
               <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/80 text-[10px] font-semibold text-white">
                 {item.initials}
               </span>
-              <span className="text-sm font-medium text-zinc-100">{item.name}</span>
+              <span className={`text-sm font-medium ${isLightMode ? "text-zinc-800" : "text-zinc-100"}`}>
+                {item.name}
+              </span>
             </div>
           </article>
         ))}
@@ -299,12 +359,16 @@ function TestimonialRow({
 export default function PortfolioPage() {
   const [activeId, setActiveId] = useState("about");
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isLightMode, setIsLightMode] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const sectionIds = useMemo(() => navItems.map((item) => item.id), []);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 3800);
+    }, 15000);
 
     return () => window.clearInterval(timer);
   }, []);
@@ -327,24 +391,84 @@ export default function PortfolioPage() {
     return () => observers.forEach((observer) => observer.disconnect());
   }, [sectionIds]);
 
-  return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#0a0d14] text-zinc-100">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,#1d4ed866,transparent_36%),radial-gradient(circle_at_50%_65%,#1e3a8a44,transparent_42%)]" />
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 24);
+    };
 
-      <header className="sticky top-0 z-50 bg-[#0a0d14]/75 backdrop-blur-xl">
-        <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-8">
-          <a href="#" className="text-sm font-semibold tracking-tight text-zinc-200">
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("theme");
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+    const shouldUseLight = savedTheme ? savedTheme === "light" : prefersLight;
+    setIsLightMode(shouldUseLight);
+    document.documentElement.classList.toggle("light", shouldUseLight);
+  }, []);
+
+  const handleThemeToggle = () => {
+    const nextThemeIsLight = !isLightMode;
+    setIsLightMode(nextThemeIsLight);
+    document.documentElement.classList.toggle("light", nextThemeIsLight);
+    window.localStorage.setItem("theme", nextThemeIsLight ? "light" : "dark");
+  };
+
+  const handleNavLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  return (
+    <div
+      className={`relative min-h-screen overflow-x-hidden transition-colors duration-300 ${
+        isLightMode ? "bg-[#f6f8ff] text-zinc-900" : "bg-[#0a0d14] text-zinc-100"
+      }`}
+    >
+      <div
+        className={`pointer-events-none absolute inset-0 ${
+          isLightMode
+            ? "bg-[radial-gradient(circle_at_50%_18%,#93c5fd55,transparent_38%),radial-gradient(circle_at_50%_65%,#c4b5fd44,transparent_45%)]"
+            : "bg-[radial-gradient(circle_at_50%_18%,#1d4ed866,transparent_36%),radial-gradient(circle_at_50%_65%,#1e3a8a44,transparent_42%)]"
+        }`}
+      />
+
+      <header className="fixed left-0 right-0 top-0 z-50 px-2 pt-3 transition-all duration-300 sm:px-4">
+        <nav
+          className={`mx-auto flex w-full items-center justify-between px-4 py-3 transition-all duration-300 sm:px-6 ${
+            isScrolled
+              ? isLightMode
+                ? "max-w-6xl rounded-[18px] border border-black/10 bg-white/85 shadow-[0_10px_28px_rgba(15,23,42,0.12)] backdrop-blur-xl"
+                : "max-w-6xl rounded-[18px] border border-white/15 bg-[#0b0f17]/85 shadow-[0_10px_30px_rgba(0,0,0,0.35)] backdrop-blur-xl"
+              : "max-w-[1202px] rounded-[24px] bg-transparent"
+          }`}
+        >
+          <a
+            href="#"
+            className={`text-sm font-semibold tracking-tight ${
+              isLightMode ? "text-zinc-900" : "text-zinc-100"
+            }`}
+          >
             Abdul M.
           </a>
-          <ul className="hidden items-center gap-6 text-xs text-zinc-400 md:flex">
+          <ul
+            className={`hidden items-center gap-6 text-xs md:flex ${
+              isLightMode ? "text-zinc-600" : "text-zinc-300"
+            }`}
+          >
             {navItems.map((item) => (
               <li key={item.id}>
                 <a
                   href={`#${item.id}`}
                   className={`transition ${
                     activeId === item.id
-                      ? "text-zinc-100"
-                      : "text-zinc-400 hover:text-zinc-200"
+                      ? isLightMode
+                        ? "text-zinc-900"
+                        : "text-zinc-100"
+                      : isLightMode
+                        ? "text-zinc-600 hover:text-zinc-800"
+                        : "text-zinc-400 hover:text-zinc-200"
                   }`}
                 >
                   {item.label}
@@ -352,23 +476,113 @@ export default function PortfolioPage() {
               </li>
             ))}
           </ul>
-          <a
-            href="#contact"
-            className="rounded-xl bg-yellow-400 px-4 py-2 text-xs font-semibold text-zinc-900 transition hover:brightness-110"
+          <div className="hidden items-center gap-2.5 md:flex">
+            <a
+              href="#contact"
+              className="rounded-xl bg-yellow-400 px-4 py-2 text-xs font-semibold text-zinc-900 transition hover:brightness-110"
+            >
+              Contact Me
+            </a>
+            <button
+              type="button"
+              onClick={handleThemeToggle}
+              className={`grid h-9 w-9 place-items-center rounded-full border transition hover:border-yellow-300/60 hover:text-yellow-300 ${
+                isLightMode
+                  ? "border-black/15 bg-white text-zinc-700"
+                  : "border-white/20 bg-white/[0.02] text-zinc-200"
+              }`}
+              aria-label={isLightMode ? "Switch to dark mode" : "Switch to light mode"}
+              title={isLightMode ? "Dark mode" : "Light mode"}
+            >
+              {isLightMode ? <FiMoon className="h-4 w-4" /> : <FiSun className="h-4 w-4" />}
+            </button>
+          </div>
+          <button
+            type="button"
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            className={`grid h-9 w-9 place-items-center rounded-full border transition md:hidden ${
+              isLightMode
+                ? "border-black/15 bg-white text-zinc-700 hover:bg-zinc-100"
+                : "border-white/20 bg-white/[0.02] text-zinc-200 hover:bg-white/[0.08]"
+            }`}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
           >
-            Contact Me
-          </a>
+            {isMobileMenuOpen ? <FiX className="h-4 w-4" /> : <FiMenu className="h-4 w-4" />}
+          </button>
         </nav>
+        <AnimatePresence>
+          {isMobileMenuOpen ? (
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="mx-auto mt-2 w-full max-w-6xl md:hidden"
+            >
+              <div
+                className={`rounded-2xl border p-4 shadow-xl backdrop-blur-xl ${
+                  isLightMode
+                    ? "border-black/10 bg-white/95"
+                    : "border-white/10 bg-[#0b0f17]/95"
+                }`}
+              >
+                <ul className="space-y-1">
+                  {navItems.map((item) => (
+                    <li key={`mobile-${item.id}`}>
+                      <a
+                        href={`#${item.id}`}
+                        onClick={handleNavLinkClick}
+                        className={`block rounded-xl px-3 py-2.5 text-sm font-medium transition ${
+                          activeId === item.id
+                            ? isLightMode
+                              ? "bg-black/5 text-zinc-900"
+                              : "bg-white/10 text-zinc-100"
+                            : isLightMode
+                              ? "text-zinc-700 hover:bg-black/5"
+                              : "text-zinc-300 hover:bg-white/10"
+                        }`}
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-4 flex items-center gap-2.5">
+                  <a
+                    href="#contact"
+                    onClick={handleNavLinkClick}
+                    className="flex-1 rounded-xl bg-yellow-400 px-4 py-2.5 text-center text-xs font-semibold text-zinc-900 transition hover:brightness-110"
+                  >
+                    Contact Me
+                  </a>
+                  <button
+                    type="button"
+                    onClick={handleThemeToggle}
+                    className={`grid h-10 w-10 place-items-center rounded-full border transition hover:border-yellow-300/60 hover:text-yellow-300 ${
+                      isLightMode
+                        ? "border-black/15 bg-white text-zinc-700"
+                        : "border-white/20 bg-white/[0.02] text-zinc-200"
+                    }`}
+                    aria-label={isLightMode ? "Switch to dark mode" : "Switch to light mode"}
+                  >
+                    {isLightMode ? <FiMoon className="h-4 w-4" /> : <FiSun className="h-4 w-4" />}
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
       </header>
 
-      <main className="relative mx-auto w-full max-w-6xl space-y-20 px-5 pb-20 pt-10 sm:px-8 sm:pt-14">
+      <main className="relative mx-auto w-full max-w-6xl space-y-20 px-5 pb-20 pt-28 sm:px-8 sm:pt-32">
         <section className="space-y-7 pt-6 text-center sm:space-y-8 md:pt-10">
           <Reveal className="mx-auto max-w-4xl">
             <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-xs font-medium text-zinc-300">
               Available for New Opportunities
               <span className="h-1.5 w-1.5 rounded-full bg-zinc-500" />
             </p>
-            <h1 className="text-[2.5rem] leading-[1.05] font-medium tracking-tight text-zinc-100 sm:text-[3.4rem] md:text-[4.4rem]">
+            <h1 className="font-display text-[2.5rem] leading-[1.03] font-semibold tracking-tight text-zinc-100 sm:text-[3.4rem] md:text-[4.4rem]">
               Full-Stack Web Developer
               <span className="block bg-gradient-to-r from-blue-500 via-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
                 specialized in WordPress
@@ -394,85 +608,167 @@ export default function PortfolioPage() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.08} className="mx-auto w-full max-w-5xl space-y-5">
-            <div className="relative overflow-hidden rounded-[20px] border border-white/15 bg-[#0f1118] p-2 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_40px_100px_rgba(0,0,0,0.6)]">
-              <div className="relative overflow-hidden rounded-[14px] border border-white/10 bg-[#2b2d34]">
-                <div className="flex h-9 items-center justify-between border-b border-white/10 bg-[#17191f] px-3">
-                  <span className="text-xs font-medium text-zinc-300">UpAlerts</span>
-                  <span className="rounded-full bg-black/30 px-2 py-0.5 text-[11px] text-zinc-300">
-                    {activeSlide + 1} / {heroSlides.length}
-                  </span>
-                </div>
+          <Reveal delay={0.08} className="mx-auto w-full max-w-6xl space-y-5">
+            <div
+              className={`relative overflow-hidden rounded-[28px] border p-4 sm:p-6 ${
+                isLightMode
+                  ? "border-black/10 bg-white/85 shadow-[0_30px_70px_rgba(15,23,42,0.12)]"
+                  : "border-white/15 bg-[#0f1118] shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_40px_100px_rgba(0,0,0,0.6)]"
+              }`}
+            >
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeSlide}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.42, ease: "easeOut" }}
+                  className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]"
+                >
+                  <div className="text-left">
+                    <div className="flex items-center justify-between">
+                      <span
+                        className={`rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] ${
+                          isLightMode
+                            ? "border-black/10 bg-black/[0.03] text-zinc-600"
+                            : "border-white/15 bg-white/[0.03] text-zinc-300"
+                        }`}
+                      >
+                        lectures
+                      </span>
+                      <span
+                        className={`rounded-full px-2.5 py-1 text-[11px] ${
+                          isLightMode ? "bg-black/5 text-zinc-600" : "bg-black/30 text-zinc-300"
+                        }`}
+                      >
+                        {activeSlide + 1} / {heroSlides.length}
+                      </span>
+                    </div>
 
-                <div className="relative aspect-[16/8.6]">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeSlide}
-                      initial={{ opacity: 0.35, scale: 1.03 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0.2, scale: 0.99 }}
-                      transition={{ duration: 0.45, ease: "easeOut" }}
-                      className="absolute inset-0"
+                    <p className="mt-4 text-xs font-semibold tracking-[0.12em] text-yellow-400">
+                      {heroSlides[activeSlide].badge}
+                    </p>
+                    <h3
+                      className={`mt-2 text-[1.8rem] leading-tight font-semibold sm:text-[2.2rem] ${
+                        isLightMode ? "text-zinc-900" : "text-white"
+                      }`}
                     >
-                      <div className="absolute inset-0 bg-[linear-gradient(140deg,#111827,#3f3f46)]" />
+                      {heroSlides[activeSlide].title}
+                    </h3>
+                    <p className={`mt-3 text-sm ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
+                      {heroSlides[activeSlide].subtitle}
+                    </p>
+
+                    <div className="mt-5 grid gap-2.5 sm:grid-cols-3">
+                      {heroSlides[activeSlide].metrics.map((item) => (
+                        <div
+                          key={item.value}
+                          className={`rounded-xl border px-3 py-2.5 ${
+                            isLightMode ? "border-black/10 bg-white/75" : "border-white/10 bg-white/[0.03]"
+                          }`}
+                        >
+                          <p className="text-base font-semibold text-yellow-400">{item.value}</p>
+                          <p className={`mt-0.5 text-[11px] leading-4 ${isLightMode ? "text-zinc-600" : "text-zinc-400"}`}>
+                            {item.label}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-5 flex items-center gap-2.5">
+                      <a
+                        href="#work"
+                        className="rounded-xl bg-yellow-400 px-4 py-2 text-xs font-semibold text-zinc-900 transition hover:brightness-110"
+                      >
+                        View Project
+                      </a>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setActiveSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+                        }
+                        className={`grid h-9 w-9 place-items-center rounded-full text-lg transition ${
+                          isLightMode
+                            ? "border border-black/10 bg-white text-zinc-700 hover:bg-zinc-100"
+                            : "border border-white/15 bg-black/40 text-zinc-200 hover:bg-black/60"
+                        }`}
+                        aria-label="Previous slide"
+                      >
+                        ‹
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setActiveSlide((prev) => (prev + 1) % heroSlides.length)}
+                        className={`grid h-9 w-9 place-items-center rounded-full text-lg transition ${
+                          isLightMode
+                            ? "border border-black/10 bg-white text-zinc-700 hover:bg-zinc-100"
+                            : "border border-white/15 bg-black/40 text-zinc-200 hover:bg-black/60"
+                        }`}
+                        aria-label="Next slide"
+                      >
+                        ›
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="relative min-h-[370px] sm:min-h-[420px]">
+                    <div
+                      className={`absolute left-3 top-2 h-[88%] w-[88%] rounded-[22px] ${
+                        isLightMode
+                          ? "-rotate-[4deg] bg-sky-200/70 shadow-[0_20px_35px_rgba(8,145,178,0.22)]"
+                          : "-rotate-[4deg] bg-[#1e2b56]/75"
+                      }`}
+                    />
+                    <div
+                      className={`absolute left-2 top-4 h-[88%] w-[88%] rounded-[22px] ${
+                        isLightMode
+                          ? "-rotate-[2deg] bg-cyan-100/75 shadow-[0_16px_32px_rgba(59,130,246,0.16)]"
+                          : "-rotate-[2deg] bg-[#263669]/80"
+                      }`}
+                    />
+                    <div
+                      className={`absolute inset-0 overflow-hidden rounded-[24px] border ${
+                        isLightMode ? "border-black/10 bg-sky-100/80" : "border-white/15 bg-[#18203f]"
+                      }`}
+                    >
+                      <div
+                        className={`absolute inset-0 ${
+                          isLightMode
+                            ? "bg-[radial-gradient(circle_at_28%_22%,#ffffffaa,transparent_34%),linear-gradient(135deg,#0ea5e9,#3b82f6)]"
+                            : "bg-[radial-gradient(circle_at_30%_20%,#93c5fd33,transparent_35%),linear-gradient(135deg,#0f172a,#1e3a8a)]"
+                        }`}
+                      />
                       <div className="absolute inset-0 grid place-items-center">
                         <Image
                           src={heroSlides[activeSlide].image}
-                          width={164}
-                          height={34}
+                          width={200}
+                          height={44}
                           alt={heroSlides[activeSlide].title}
                           priority
+                          className="drop-shadow-[0_12px_28px_rgba(0,0,0,0.35)]"
                         />
                       </div>
-                    </motion.div>
-                  </AnimatePresence>
-
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent px-4 pb-4 pt-8 text-left">
-                    <span className="inline-flex rounded-sm bg-yellow-400 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-zinc-900">
-                      {heroSlides[activeSlide].badge}
-                    </span>
-                    <p className="mt-2 text-2xl font-semibold leading-tight text-white">
-                      {heroSlides[activeSlide].title}
-                    </p>
-                    <p className="mt-1 text-sm text-zinc-300">{heroSlides[activeSlide].subtitle}</p>
+                    </div>
                   </div>
-
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setActiveSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
-                    }
-                    className="absolute left-3 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-black/55 text-lg text-zinc-200 transition hover:bg-black/75"
-                    aria-label="Previous slide"
-                  >
-                    ‹
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setActiveSlide((prev) => (prev + 1) % heroSlides.length)}
-                    className="absolute right-3 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-black/55 text-lg text-zinc-200 transition hover:bg-black/75"
-                    aria-label="Next slide"
-                  >
-                    ›
-                  </button>
-
-                  <a
-                    href="#work"
-                    className="absolute right-4 top-4 rounded-lg bg-yellow-400 px-4 py-2 text-xs font-semibold text-zinc-900 transition hover:brightness-110"
-                  >
-                    View Project
-                  </a>
-                </div>
-              </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
-            <div className="mx-auto grid w-full max-w-2xl grid-cols-2 gap-2.5 sm:grid-cols-4">
+            <div className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-3 py-4 sm:gap-4 sm:py-6 lg:grid-cols-4">
               {stats.map((item) => (
                 <div
                   key={item.label}
-                  className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-3 text-center"
+                  className={`rounded-2xl border px-4 py-5 text-center sm:px-5 sm:py-6 ${
+                    isLightMode ? "border-black/10 bg-white/70" : "border-white/10 bg-white/[0.03]"
+                  }`}
                 >
-                  <p className="text-base font-semibold text-white sm:text-lg">{item.value}</p>
-                  <p className="mt-1 text-[10px] uppercase tracking-wider text-zinc-400 sm:text-[11px]">
+                  <p className={`text-xl font-semibold sm:text-2xl ${isLightMode ? "text-zinc-900" : "text-white"}`}>
+                    {item.value}
+                  </p>
+                  <p
+                    className={`mt-2 text-[11px] uppercase tracking-wider sm:text-xs ${
+                      isLightMode ? "text-zinc-500" : "text-zinc-400"
+                    }`}
+                  >
                     {item.label}
                   </p>
                 </div>
@@ -567,10 +863,16 @@ export default function PortfolioPage() {
               technologies
             </p>
           </Reveal>
-          <div className="mt-9 space-y-2.5 rounded-[28px] border border-white/5 bg-white/[0.015] p-2.5 sm:mt-11 sm:space-y-3 sm:p-3">
-            <TechRow row={techRows[0]} speed={18} />
-            <TechRow row={techRows[1]} reverse speed={16} />
-            <TechRow row={techRows[2]} speed={17} />
+          <div
+            className={`mt-9 space-y-2.5 rounded-[28px] p-2.5 sm:mt-11 sm:space-y-3 sm:p-3 ${
+              isLightMode
+                ? "border border-black/10 bg-white/65 shadow-[0_20px_45px_rgba(15,23,42,0.08)]"
+                : "border border-white/5 bg-white/[0.015]"
+            }`}
+          >
+            <TechRow row={techRows[0]} speed={18} isLightMode={isLightMode} />
+            <TechRow row={techRows[1]} reverse speed={16} isLightMode={isLightMode} />
+            <TechRow row={techRows[2]} speed={17} isLightMode={isLightMode} />
           </div>
         </section>
 
@@ -601,11 +903,11 @@ export default function PortfolioPage() {
             ))}
           </div>
 
-          <div className="relative mt-8 space-y-8 pl-8 sm:pl-10">
-            <div className="absolute bottom-3 left-3 top-2 w-px bg-white/10 sm:left-4" />
+          <div className="relative mt-8 space-y-8 pl-8 [--timeline-x:0.75rem] [--timeline-offset:2rem] sm:pl-10 sm:[--timeline-x:1rem] sm:[--timeline-offset:2.5rem]">
+            <div className="absolute bottom-3 top-2 left-[var(--timeline-x)] w-px bg-white/10" />
             {workExperiences.map((item, index) => (
               <Reveal key={item.company} delay={0.04 * index} className="relative">
-                <span className="absolute -left-[30px] top-3 h-2.5 w-2.5 rounded-full bg-yellow-400 shadow-[0_0_0_4px_rgba(250,204,21,0.08)] sm:-left-[35px]" />
+                <span className="absolute top-3 left-[calc(var(--timeline-x)-var(--timeline-offset))] h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-yellow-400 shadow-[0_0_0_4px_rgba(250,204,21,0.08)]" />
                 <article className="rounded-2xl border border-white/8 bg-white/[0.015] p-4 sm:p-5">
                   <div className="flex flex-wrap items-start justify-between gap-4">
                     <div>
@@ -675,32 +977,85 @@ export default function PortfolioPage() {
           </Reveal>
 
           <div className="space-y-2.5">
-            <TestimonialRow items={testimonials.slice(0, 4)} speed={13} />
-            <TestimonialRow items={testimonials.slice(4, 8)} reverse speed={12} />
-            <TestimonialRow items={testimonials.slice(8, 12)} speed={11} />
+            <TestimonialRow items={testimonials.slice(0, 4)} speed={13} isLightMode={isLightMode} />
+            <TestimonialRow
+              items={testimonials.slice(4, 8)}
+              reverse
+              speed={12}
+              isLightMode={isLightMode}
+            />
+            <TestimonialRow items={testimonials.slice(8, 12)} speed={11} isLightMode={isLightMode} />
           </div>
         </section>
 
-        <section id="contact" className="scroll-mt-24 rounded-3xl border border-white/10 bg-[#0f1320] p-6 sm:p-8">
+        <section
+          id="contact"
+          className={`section-contact scroll-mt-24 rounded-3xl p-6 sm:p-8 ${
+            isLightMode
+              ? "border-y border-black/10 bg-white/80 shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+              : "border-y border-white/10 bg-[#0f1320]"
+          }`}
+        >
           <Reveal>
-            <h2 className="text-2xl font-semibold sm:text-3xl">Frequently Asked Questions</h2>
-            <div className="mt-6 divide-y divide-white/10 rounded-2xl border border-white/10">
-              {faqs.map((question) => (
-                <details key={question} className="group px-5 py-4">
-                  <summary className="cursor-pointer list-none text-sm font-medium text-zinc-100">
-                    {question}
-                  </summary>
-                  <p className="mt-2 text-sm leading-6 text-zinc-300">
-                    Yes. This is placeholder content designed to preserve the visual structure and
-                    interaction pattern from the reference design.
-                  </p>
-                </details>
+            <h2 className={`text-2xl font-semibold sm:text-3xl ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>
+              Frequently Asked Questions
+            </h2>
+            <div
+              className={`mt-6 divide-y rounded-2xl ${
+                isLightMode ? "divide-black/10 border border-black/10" : "divide-white/10 border border-white/10"
+              }`}
+            >
+              {faqs.map((question, index) => (
+                <article key={question} className="px-5 py-4">
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaqIndex((prev) => (prev === index ? null : index))}
+                    className={`flex w-full items-center justify-between gap-3 text-left text-sm font-medium ${
+                      isLightMode ? "text-zinc-800" : "text-zinc-100"
+                    }`}
+                  >
+                    <span>{question}</span>
+                    <FiChevronDown
+                      className={`h-4 w-4 shrink-0 transition-transform duration-300 ${
+                        openFaqIndex === index ? "rotate-180" : "rotate-0"
+                      }`}
+                    />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {openFaqIndex === index ? (
+                      <motion.p
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.28, ease: "easeInOut" }}
+                        className={`overflow-hidden pr-6 text-sm leading-6 ${
+                          isLightMode ? "text-zinc-600" : "text-zinc-300"
+                        }`}
+                      >
+                        <span className="mt-2 block">
+                          Yes. This is placeholder content designed to preserve the visual structure
+                          and interaction pattern from the reference design.
+                        </span>
+                      </motion.p>
+                    ) : null}
+                  </AnimatePresence>
+                </article>
               ))}
             </div>
-            <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+            <div
+              className={`mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl p-5 ${
+                isLightMode
+                  ? "border border-black/10 bg-white"
+                  : "border border-white/10 bg-white/[0.02]"
+              }`}
+            >
               <div>
-                <p className="text-sm text-zinc-300">Need WordPress + React development support?</p>
-                <p className="text-lg font-semibold">Let&apos;s discuss your next web project.</p>
+                <p className={`text-sm ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
+                  Need WordPress + React development support?
+                </p>
+                <p className={`text-lg font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>
+                  Let&apos;s discuss your next web project.
+                </p>
               </div>
               <a
                 href="mailto:mujeebabdul525@gmail.com"
@@ -709,15 +1064,24 @@ export default function PortfolioPage() {
                 mujeebabdul525@gmail.com
               </a>
             </div>
-            <div className="mt-3 flex flex-wrap gap-2 text-xs text-zinc-400">
-              <a href="tel:+923424201891" className="rounded-full border border-white/15 px-3 py-1.5">
+            <div className={`mt-3 flex flex-wrap gap-2 text-xs ${isLightMode ? "text-zinc-600" : "text-zinc-400"}`}>
+              <a
+                href="tel:+923424201891"
+                className={`rounded-full px-3 py-1.5 ${
+                  isLightMode ? "border border-black/15" : "border border-white/15"
+                }`}
+              >
                 +92 342 4201891
               </a>
               <a
                 href="https://www.linkedin.com/in/abdul-mujeeb-36192b221/"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full border border-white/15 px-3 py-1.5 hover:text-zinc-200"
+                className={`rounded-full px-3 py-1.5 ${
+                  isLightMode
+                    ? "border border-black/15 hover:text-zinc-800"
+                    : "border border-white/15 hover:text-zinc-200"
+                }`}
               >
                 linkedin.com/in/abdul-mujeeb-36192b221
               </a>
@@ -726,10 +1090,121 @@ export default function PortfolioPage() {
         </section>
       </main>
 
-      <footer className="border-t border-white/10 py-8">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-3 px-5 text-xs text-zinc-400 sm:flex-row sm:px-8">
-          <p>© {new Date().getFullYear()} Portfolio Replica</p>
-          <p>Built with Next.js, Tailwind CSS, and Framer Motion</p>
+      <footer className="px-5 pb-8 sm:px-8 sm:pb-10">
+        <div
+          className={`relative w-full overflow-hidden rounded-[30px] border p-7 sm:p-10 ${
+            isLightMode
+              ? "border-black/10 bg-white/80 shadow-[0_30px_60px_rgba(15,23,42,0.1)]"
+              : "border-white/10 bg-[#0d1120]"
+          }`}
+        >
+          <div className="mx-auto w-full max-w-6xl">
+            <div
+              className={`pointer-events-none absolute -right-10 -top-16 h-52 w-52 rounded-full blur-3xl ${
+                isLightMode ? "bg-cyan-300/40" : "bg-blue-500/20"
+              }`}
+            />
+            <div
+              className={`pointer-events-none absolute -bottom-16 -left-10 h-56 w-56 rounded-full blur-3xl ${
+                isLightMode ? "bg-violet-300/40" : "bg-fuchsia-500/20"
+              }`}
+            />
+
+            <div className="relative grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+              <div>
+                <p
+                  className={`font-display text-3xl leading-tight font-semibold sm:text-4xl ${
+                    isLightMode ? "text-zinc-900" : "text-white"
+                  }`}
+                >
+                  Let&apos;s build a high-converting website for your business.
+                </p>
+                <p className={`mt-3 max-w-xl text-sm leading-7 ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
+                  From strategy to launch, I design and develop modern, fast, and SEO-ready web
+                  experiences that help brands grow with confidence.
+                </p>
+
+                <div className="mt-6 flex flex-wrap gap-2.5">
+                  <a
+                    href="mailto:mujeebabdul525@gmail.com"
+                    className="rounded-xl bg-yellow-400 px-5 py-3 text-xs font-semibold tracking-wide text-zinc-900 transition hover:brightness-110"
+                  >
+                    Start a Project
+                  </a>
+                  <a
+                    href="#work"
+                    className={`rounded-xl px-5 py-3 text-xs font-semibold tracking-wide transition ${
+                      isLightMode
+                        ? "border border-black/15 bg-white text-zinc-700 hover:bg-zinc-100"
+                        : "border border-white/15 bg-white/[0.04] text-zinc-200 hover:bg-white/[0.09]"
+                    }`}
+                  >
+                    View Portfolio
+                  </a>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <p className={`text-[11px] uppercase tracking-[0.16em] ${isLightMode ? "text-zinc-500" : "text-zinc-400"}`}>
+                    Navigation
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {navItems.map((item) => (
+                      <a
+                        key={item.id}
+                        href={`#${item.id}`}
+                        className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
+                          isLightMode
+                            ? "border border-black/10 bg-white text-zinc-700 hover:bg-zinc-100"
+                            : "border border-white/10 bg-white/[0.03] text-zinc-300 hover:bg-white/[0.08]"
+                        }`}
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <p className={`text-[11px] uppercase tracking-[0.16em] ${isLightMode ? "text-zinc-500" : "text-zinc-400"}`}>
+                    Contact
+                  </p>
+                  <div className="mt-3 space-y-2 text-sm">
+                    <a
+                      href="mailto:mujeebabdul525@gmail.com"
+                      className={`block transition ${isLightMode ? "text-zinc-700 hover:text-zinc-900" : "text-zinc-300 hover:text-white"}`}
+                    >
+                      mujeebabdul525@gmail.com
+                    </a>
+                    <a
+                      href="tel:+923424201891"
+                      className={`block transition ${isLightMode ? "text-zinc-700 hover:text-zinc-900" : "text-zinc-300 hover:text-white"}`}
+                    >
+                      +92 342 4201891
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/abdul-mujeeb-36192b221/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`block transition ${isLightMode ? "text-zinc-700 hover:text-zinc-900" : "text-zinc-300 hover:text-white"}`}
+                    >
+                      LinkedIn Profile
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className={`relative mt-8 flex flex-col gap-2 border-t pt-5 text-xs sm:flex-row sm:items-center sm:justify-between ${
+                isLightMode ? "border-black/10 text-zinc-500" : "border-white/10 text-zinc-400"
+              }`}
+            >
+              <p>© {new Date().getFullYear()} Abdul Mujeeb. All rights reserved.</p>
+              <p>Crafted for performance, SEO, and high conversions.</p>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
