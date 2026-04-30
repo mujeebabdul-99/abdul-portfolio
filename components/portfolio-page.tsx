@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { AnimatePresence, motion, useAnimationFrame, useMotionValue } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   SiWordpress,
   SiWoocommerce,
@@ -133,37 +135,76 @@ const techRows = [
 
 const heroSlides = [
   {
-    title: "Automate proposal discovery and win more quality projects.",
-    subtitle: "UpAlerts Platform",
-    badge: "JOB ALERTS TOOL",
+    title: "Accessible healthcare platform connecting digital health providers and APAC users.",
+    subtitle: "Peach Health Asia",
+    badge: "HEALTHCARE PLATFORM",
     metrics: [
-      { value: "8k+", label: "Faster finance transactions" },
-      { value: "160h", label: "Lower expenses every month" },
-      { value: "2m", label: "Trusted regular users network" },
+      { value: "APAC", label: "Regional healthcare market focus" },
+      { value: "B2B + B2C", label: "Dual commercial and individual pathways" },
+      { value: "Singapore HQ", label: "Regional expansion-driven positioning" },
     ],
-    image: "/next.svg",
+    image: "/images/portfolio-01.png",
+    url: "https://www.peachhealthasia.com/",
   },
   {
-    title: "Scale publishing workflows with custom Gutenberg systems.",
-    subtitle: "Custom Gutenberg Blocks",
-    badge: "WORDPRESS PLUGIN",
+    title: "Executive coaching website for founders and CEOs with conversion-first copy.",
+    subtitle: "Allen Adjamian",
+    badge: "COACHING WEBSITE",
     metrics: [
-      { value: "10k+", label: "Blocks rendered across pages" },
-      { value: "240h", label: "Editing hours saved" },
-      { value: "4m", label: "Weekly content impressions" },
+      { value: "Founder/CEO", label: "Clear target audience positioning" },
+      { value: "Guarantee", label: "Trust-driven coaching offer framing" },
+      { value: "Newsletter", label: "Owned audience growth funnel" },
     ],
-    image: "/vercel.svg",
+    image: "/images/portfolio-02.png",
+    url: "https://adjamian.com/",
   },
   {
-    title: "Increase store conversions with a performance-first checkout UX.",
-    subtitle: "WooCommerce Optimization",
-    badge: "E-COMMERCE",
+    title: "Executive coaching and consulting brand with insight-to-execution messaging.",
+    subtitle: "Kinetic Method",
+    badge: "CONSULTING BRAND",
     metrics: [
-      { value: "5k+", label: "Orders processed monthly" },
-      { value: "125h", label: "Manual operations reduced" },
-      { value: "10m", label: "Revenue touchpoints optimized" },
+      { value: "1:1 Accelerator", label: "Structured flagship service offer" },
+      { value: "Workshops", label: "B2B team capability expansion" },
+      { value: "Speaking", label: "Authority and demand generation channel" },
     ],
-    image: "/globe.svg",
+    image: "/images/portfolio-03.png",
+    url: "https://kineticmethod.com/",
+  },
+  {
+    title: "Student-athlete mentorship website built around outcomes and admissions strategy.",
+    subtitle: "Athlete Advisors",
+    badge: "SPORTS EDUCATION",
+    metrics: [
+      { value: "3 Divisions", label: "Sports, Academic, and ECA pathways" },
+      { value: "Families", label: "Parent-aligned decision journey UX" },
+      { value: "Clear CTA", label: "Story and contact conversion flow" },
+    ],
+    image: "/images/portfolio-04.png",
+    url: "https://www.aaamentors.com/",
+  },
+  {
+    title: "Somatic healing personal brand site with high-trust storytelling and lead magnet.",
+    subtitle: "Leanna Hunt",
+    badge: "PERSONAL BRAND",
+    metrics: [
+      { value: "Membership", label: "Recurring community-based offer" },
+      { value: "Podcast", label: "Content-driven authority channel" },
+      { value: "Lead Magnet", label: "Survival response map capture flow" },
+    ],
+    image: "/images/portfolio-05.png",
+    url: "https://leannahunt.com/",
+  },
+  {
+    title: "Handcrafted furniture and epoxy e-commerce narrative with premium craft positioning.",
+    subtitle: "Sovza Wooden Dreams",
+    badge: "E-COMMERCE STORE",
+    metrics: [
+      { value: "100%", label: "Handmade product narrative" },
+      { value: "300+", label: "Custom projects showcased" },
+      { value: "Slovenian Wood", label: "Localized material trust signal" },
+    ],
+    image: "/images/portfolio-06.png",
+    url: "https://sovza.si/en/home/",
   },
 ];
 
@@ -363,6 +404,8 @@ export default function PortfolioPage() {
   const [isLightMode, setIsLightMode] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const aboutSectionRef = useRef<HTMLElement | null>(null);
+  const aboutImageRef = useRef<HTMLDivElement | null>(null);
   const sectionIds = useMemo(() => navItems.map((item) => item.id), []);
 
   useEffect(() => {
@@ -407,6 +450,68 @@ export default function PortfolioPage() {
     const shouldUseLight = savedTheme ? savedTheme === "light" : prefersLight;
     setIsLightMode(shouldUseLight);
     document.documentElement.classList.toggle("light", shouldUseLight);
+  }, []);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    if (!aboutSectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const selector = gsap.utils.selector(aboutSectionRef);
+      const badges = selector(".about-badge");
+      const copyBlocks = selector(".about-copy");
+      const skillCards = selector(".about-skill-card");
+      const ctaRow = selector(".about-cta");
+      const glowOrb = selector(".about-glow");
+
+      if (aboutImageRef.current) {
+        const introTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: aboutSectionRef.current,
+            start: "top 74%",
+          },
+        });
+
+        introTl.fromTo(
+          badges,
+          { y: 20, opacity: 0, scale: 0.95 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.45, stagger: 0.09, ease: "power2.out" },
+          "-=0.5"
+        );
+
+        introTl.fromTo(
+          copyBlocks,
+          { y: 24, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.55, stagger: 0.08, ease: "power2.out" },
+          "-=0.3"
+        );
+
+        introTl.fromTo(
+          skillCards,
+          { y: 26, opacity: 0, rotateX: -16 },
+          { y: 0, opacity: 1, rotateX: 0, duration: 0.48, stagger: 0.06, ease: "power2.out" },
+          "-=0.25"
+        );
+
+        introTl.fromTo(
+          ctaRow,
+          { y: 18, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.45, ease: "power2.out" },
+          "-=0.2"
+        );
+
+        gsap.to(glowOrb, {
+          xPercent: 12,
+          yPercent: -8,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          duration: 4.2,
+        });
+      }
+    }, aboutSectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   const handleThemeToggle = () => {
@@ -612,7 +717,7 @@ export default function PortfolioPage() {
             <div
               className={`relative overflow-hidden rounded-[28px] border p-4 sm:p-6 ${
                 isLightMode
-                  ? "border-black/10 bg-white/85 shadow-[0_30px_70px_rgba(15,23,42,0.12)]"
+                  ? "border-black/10 bg-white shadow-[0_30px_70px_rgba(15,23,42,0.12)]"
                   : "border-white/15 bg-[#0f1118] shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_40px_100px_rgba(0,0,0,0.6)]"
               }`}
             >
@@ -677,10 +782,12 @@ export default function PortfolioPage() {
 
                     <div className="mt-5 flex items-center gap-2.5">
                       <a
-                        href="#work"
+                        href={heroSlides[activeSlide].url}
+                        target="_blank"
+                        rel="noreferrer"
                         className="rounded-xl bg-yellow-400 px-4 py-2 text-xs font-semibold text-zinc-900 transition hover:brightness-110"
                       >
-                        View Project
+                        Visit Website
                       </a>
                       <button
                         type="button"
@@ -713,41 +820,28 @@ export default function PortfolioPage() {
 
                   <div className="relative min-h-[370px] sm:min-h-[420px]">
                     <div
-                      className={`absolute left-3 top-2 h-[88%] w-[88%] rounded-[22px] ${
-                        isLightMode
-                          ? "-rotate-[4deg] bg-sky-200/70 shadow-[0_20px_35px_rgba(8,145,178,0.22)]"
-                          : "-rotate-[4deg] bg-[#1e2b56]/75"
-                      }`}
-                    />
-                    <div
-                      className={`absolute left-2 top-4 h-[88%] w-[88%] rounded-[22px] ${
-                        isLightMode
-                          ? "-rotate-[2deg] bg-cyan-100/75 shadow-[0_16px_32px_rgba(59,130,246,0.16)]"
-                          : "-rotate-[2deg] bg-[#263669]/80"
-                      }`}
-                    />
-                    <div
                       className={`absolute inset-0 overflow-hidden rounded-[24px] border ${
-                        isLightMode ? "border-black/10 bg-sky-100/80" : "border-white/15 bg-[#18203f]"
+                        isLightMode ? "border-black/10 bg-white" : "border-white/15 bg-[#0b0f17]"
                       }`}
                     >
-                      <div
-                        className={`absolute inset-0 ${
-                          isLightMode
-                            ? "bg-[radial-gradient(circle_at_28%_22%,#ffffffaa,transparent_34%),linear-gradient(135deg,#0ea5e9,#3b82f6)]"
-                            : "bg-[radial-gradient(circle_at_30%_20%,#93c5fd33,transparent_35%),linear-gradient(135deg,#0f172a,#1e3a8a)]"
-                        }`}
+                      <Image
+                        src={heroSlides[activeSlide].image}
+                        alt=""
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 42vw"
+                        className="scale-110 object-cover object-center blur-2xl"
+                        priority
+                        aria-hidden="true"
                       />
-                      <div className="absolute inset-0 grid place-items-center">
-                        <Image
-                          src={heroSlides[activeSlide].image}
-                          width={200}
-                          height={44}
-                          alt={heroSlides[activeSlide].title}
-                          priority
-                          className="drop-shadow-[0_12px_28px_rgba(0,0,0,0.35)]"
-                        />
-                      </div>
+                      <div className="absolute inset-0 bg-black/20" />
+                      <Image
+                        src={heroSlides[activeSlide].image}
+                        alt={heroSlides[activeSlide].subtitle}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 42vw"
+                        className="h-full w-full object-contain object-center opacity-100 [mix-blend-mode:normal]"
+                        priority
+                      />
                     </div>
                   </div>
                 </motion.div>
@@ -777,50 +871,105 @@ export default function PortfolioPage() {
           </Reveal>
         </section>
 
-        <section id="about" className="scroll-mt-24 space-y-9">
+        <section ref={aboutSectionRef} id="about" className="scroll-mt-24 space-y-9">
           <Reveal>
-            <h2 className="text-center text-4xl font-semibold tracking-tight text-zinc-100 sm:text-5xl">
+            <p className={`text-center text-xs font-semibold tracking-[0.2em] ${isLightMode ? "text-zinc-500" : "text-zinc-400"}`}>
+              WHO I AM
+            </p>
+            <h2 className={`mt-2 text-center text-4xl font-semibold tracking-tight sm:text-5xl ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>
               About Me
             </h2>
           </Reveal>
 
-          <div className="grid items-start gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10">
-            <Reveal className="relative mx-auto w-full max-w-[530px] overflow-hidden rounded-[18px] border border-white/10 bg-[#11141d]">
-              <div className="aspect-[4/5] bg-[linear-gradient(140deg,#d8c7ab_0%,#ba9874_24%,#272a30_62%,#11141d_100%)]" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_25%,#ffffff30,transparent_38%),radial-gradient(circle_at_80%_72%,#00000070,transparent_40%)]" />
+          <div className="grid items-start gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:gap-9">
+            <Reveal
+              className={`relative mx-auto w-full max-w-[500px] overflow-hidden rounded-[24px] border p-3 ${
+                isLightMode
+                  ? "border-black/10 bg-white shadow-[0_20px_45px_rgba(15,23,42,0.1)]"
+                  : "border-white/10 bg-[#0f1320]"
+              }`}
+            >
+              <div
+                ref={aboutImageRef}
+                className="about-image relative aspect-[4/5] overflow-hidden rounded-[18px] bg-[linear-gradient(140deg,#d8c7ab_0%,#ba9874_24%,#272a30_62%,#11141d_100%)]"
+              >
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_25%,#ffffff30,transparent_38%),radial-gradient(circle_at_80%_72%,#00000070,transparent_40%)]" />
+              </div>
+
+              <span className="about-badge absolute left-6 top-6 rounded-full border border-emerald-300/40 bg-emerald-300/10 px-3 py-1 text-[11px] font-semibold tracking-wide text-emerald-200">
+                Available for Projects
+              </span>
+              <span className={`about-badge absolute bottom-6 left-6 rounded-full px-3 py-1 text-[11px] font-semibold ${
+                isLightMode ? "bg-black/75 text-white" : "bg-white/90 text-zinc-900"
+              }`}>
+                Islamabad, Pakistan
+              </span>
             </Reveal>
 
-            <Reveal delay={0.08}>
-              <h3 className="text-3xl leading-tight font-semibold text-zinc-100">
+            <Reveal
+              delay={0.08}
+              className={`relative overflow-hidden rounded-[24px] border p-6 sm:p-8 ${
+                isLightMode
+                  ? "border-black/10 bg-white/90 shadow-[0_18px_40px_rgba(15,23,42,0.08)]"
+                  : "border-white/10 bg-white/[0.03]"
+              }`}
+            >
+              <div className={`about-glow pointer-events-none absolute -right-16 -top-20 h-40 w-40 rounded-full blur-3xl ${
+                isLightMode ? "bg-cyan-300/35" : "bg-blue-500/20"
+              }`} />
+
+              <h3 className={`about-copy relative text-3xl leading-tight font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>
                 Hi, I&apos;m Abdul Mujeeb -
                 <span className="block text-yellow-400">Full-Stack Web Developer</span>
               </h3>
 
-              <p className="mt-4 text-sm leading-7 text-zinc-300">
+              <p className={`about-copy mt-4 text-sm leading-7 ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
                 I&apos;m a Full-Stack Web Developer specialized in WordPress, with hands-on
                 experience building custom themes, plugins, and WooCommerce stores. I also work
                 across modern frontend stacks including React and Next.js for performance-focused
                 interfaces.
               </p>
 
-              <h4 className="mt-5 text-xl font-semibold text-zinc-100">I specialize in:</h4>
+              <div className="about-copy mt-6 grid gap-2.5 sm:grid-cols-3">
+                <div className={`rounded-xl border px-3 py-2 ${isLightMode ? "border-black/10 bg-white" : "border-white/10 bg-white/[0.03]"}`}>
+                  <p className="text-xs uppercase tracking-wider text-yellow-400">Experience</p>
+                  <p className={`mt-1 text-sm font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>6+ Years</p>
+                </div>
+                <div className={`rounded-xl border px-3 py-2 ${isLightMode ? "border-black/10 bg-white" : "border-white/10 bg-white/[0.03]"}`}>
+                  <p className="text-xs uppercase tracking-wider text-yellow-400">Projects</p>
+                  <p className={`mt-1 text-sm font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>WordPress + React</p>
+                </div>
+                <div className={`rounded-xl border px-3 py-2 ${isLightMode ? "border-black/10 bg-white" : "border-white/10 bg-white/[0.03]"}`}>
+                  <p className="text-xs uppercase tracking-wider text-yellow-400">Focus</p>
+                  <p className={`mt-1 text-sm font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>Business Growth UX</p>
+                </div>
+              </div>
 
-              <div className="mt-4 grid gap-x-6 gap-y-1.5 text-sm text-zinc-300 sm:grid-cols-2">
-                {aboutSpecialties.map((item) => (
-                  <p key={item} className="flex items-start gap-2.5 leading-6">
-                    <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <h4 className={`about-copy mt-6 text-base font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>
+                Core Focus Areas
+              </h4>
+
+              <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
+                {aboutSpecialties.slice(0, 8).map((item, index) => (
+                  <p
+                    key={item}
+                    className={`about-skill-card flex items-start gap-2 rounded-xl border px-3 py-2 text-sm leading-6 ${
+                      isLightMode ? "border-black/10 bg-white text-zinc-700" : "border-white/10 bg-white/[0.03] text-zinc-300"
+                    }`}
+                  >
+                    <span className="mt-[8px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
                     <span>{item}</span>
                   </p>
                 ))}
               </div>
 
-              <p className="mt-5 text-sm leading-7 text-zinc-300">
+              <p className={`about-copy mt-5 text-sm leading-7 ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
                 Based in Islamabad, Pakistan, I focus on building scalable, responsive, and
                 business-driven web experiences with strong design execution and reliable technical
                 delivery. Let&apos;s build something impactful together.
               </p>
 
-              <div className="mt-7 flex flex-wrap items-center gap-2.5">
+              <div className="about-cta mt-7 flex flex-wrap items-center gap-2.5">
                 <a
                   href="#services"
                   className="rounded-xl bg-yellow-400 px-5 py-2.5 text-xs font-semibold tracking-wide text-zinc-900 transition hover:brightness-110"
@@ -829,7 +978,11 @@ export default function PortfolioPage() {
                 </a>
                 <a
                   href="#contact"
-                  className="rounded-xl border border-yellow-300/35 bg-yellow-300/5 px-5 py-2.5 text-xs font-semibold tracking-wide text-yellow-100 transition hover:bg-yellow-300/10"
+                  className={`rounded-xl px-5 py-2.5 text-xs font-semibold tracking-wide transition ${
+                    isLightMode
+                      ? "border border-yellow-500/30 bg-yellow-100 text-yellow-800 hover:bg-yellow-200"
+                      : "border border-yellow-300/35 bg-yellow-300/5 text-yellow-100 hover:bg-yellow-300/10"
+                  }`}
                 >
                   Hire Now
                 </a>
@@ -837,7 +990,9 @@ export default function PortfolioPage() {
                   href="https://www.linkedin.com/in/abdul-mujeeb-36192b221/"
                   target="_blank"
                   rel="noreferrer"
-                  className="px-4 py-2.5 text-xs font-semibold tracking-wide text-zinc-300 transition hover:text-white"
+                  className={`px-4 py-2.5 text-xs font-semibold tracking-wide transition ${
+                    isLightMode ? "text-zinc-600 hover:text-zinc-900" : "text-zinc-300 hover:text-white"
+                  }`}
                 >
                   View LinkedIn
                 </a>
