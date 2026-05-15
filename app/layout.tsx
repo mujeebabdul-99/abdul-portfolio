@@ -19,8 +19,58 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio Replica | Next.js",
-  description: "A production-style portfolio layout replica built with Next.js and Tailwind.",
+  metadataBase: new URL("https://abdulmujeebahsan.com"),
+  title: {
+    default: "Abdul Mujeeb Ahsan | Full-Stack WordPress Developer",
+    template: "%s | Abdul Mujeeb Ahsan",
+  },
+  description:
+    "Abdul Mujeeb Ahsan is a full-stack web developer specialized in WordPress, WooCommerce, React, and Next.js. Building fast, SEO-friendly websites, custom themes, plugins, and conversion-focused UI.",
+  keywords: [
+    "Abdul Mujeeb Ahsan",
+    "WordPress developer",
+    "full-stack web developer",
+    "WooCommerce developer",
+    "React developer",
+    "Next.js developer",
+    "WordPress designer Islamabad",
+    "custom WordPress themes",
+    "WordPress plugins",
+  ],
+  authors: [{ name: "Abdul Mujeeb Ahsan", url: "https://abdulmujeebahsan.com" }],
+  creator: "Abdul Mujeeb Ahsan",
+  icons: {
+    icon: [{ url: "/imgs/site-icon.jpg", type: "image/jpeg" }],
+    apple: "/imgs/site-icon.jpg",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://abdulmujeebahsan.com",
+    siteName: "Abdul Mujeeb Ahsan Portfolio",
+    title: "Abdul Mujeeb Ahsan | Full-Stack WordPress Developer",
+    description:
+      "Full-stack web developer specialized in WordPress, WooCommerce, React, and Next.js. Custom themes, plugins, and high-performance business websites.",
+    images: [
+      {
+        url: "/imgs/site-icon.jpg",
+        width: 512,
+        height: 512,
+        alt: "Abdul Mujeeb Ahsan",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Abdul Mujeeb Ahsan | Full-Stack WordPress Developer",
+    description:
+      "WordPress full-stack developer building fast, SEO-friendly websites with React and Next.js.",
+    images: ["/imgs/site-icon.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

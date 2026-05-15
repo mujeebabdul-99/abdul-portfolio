@@ -43,6 +43,20 @@ import {
   SiMake,
   SiAirtable,
   SiNotion,
+  SiContentful,
+  SiSanity,
+  SiStrapi,
+  SiGhost,
+  SiBigcommerce,
+  SiDrupal,
+  SiJoomla,
+  SiHubspot,
+  SiSass,
+  SiBootstrap,
+  SiHtml5,
+  SiNodedotjs,
+  SiVuedotjs,
+  SiMongodb,
 } from "react-icons/si";
 import { MdLaptopMac } from "react-icons/md";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -56,7 +70,6 @@ import {
   stats,
   testimonials,
   workExperiences,
-  workFilters,
 } from "@/components/data";
 
 const fadeUp = {
@@ -98,6 +111,14 @@ const techRows = [
     { icon: SiElementor, color: "text-pink-500" },
     { icon: SiGutenberg, color: "text-zinc-200" },
     { icon: SiYoast, color: "text-red-400" },
+    { icon: SiContentful, color: "text-blue-400" },
+    { icon: SiSanity, color: "text-red-500" },
+    { icon: SiStrapi, color: "text-indigo-400" },
+    { icon: SiGhost, color: "text-zinc-300" },
+    { icon: SiBigcommerce, color: "text-blue-500" },
+    { icon: SiDrupal, color: "text-sky-600" },
+    { icon: SiJoomla, color: "text-orange-400" },
+    { icon: SiHubspot, color: "text-orange-500" },
     { icon: SiReact, color: "text-cyan-400" },
     { icon: SiNextdotjs, color: "text-zinc-100" },
     { icon: SiTailwindcss, color: "text-cyan-500" },
@@ -123,10 +144,16 @@ const techRows = [
     { icon: SiFigma, color: "text-pink-500" },
     { icon: SiCanva, color: "text-cyan-400" },
     { icon: SiFramer, color: "text-zinc-200" },
+    { icon: SiHtml5, color: "text-orange-500" },
+    { icon: SiSass, color: "text-pink-400" },
+    { icon: SiBootstrap, color: "text-violet-500" },
     { icon: SiJavascript, color: "text-yellow-400" },
     { icon: SiTypescript, color: "text-blue-500" },
+    { icon: SiVuedotjs, color: "text-green-500" },
+    { icon: SiNodedotjs, color: "text-green-400" },
     { icon: SiPhp, color: "text-indigo-400" },
     { icon: SiMysql, color: "text-sky-500" },
+    { icon: SiMongodb, color: "text-green-500" },
     { icon: SiPostman, color: "text-amber-400" },
     { icon: SiGoogleanalytics, color: "text-orange-400" },
     { icon: SiGooglesearchconsole, color: "text-emerald-400" },
@@ -731,16 +758,7 @@ export default function PortfolioPage() {
                   className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]"
                 >
                   <div className="text-left">
-                    <div className="flex items-center justify-between">
-                      <span
-                        className={`rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] ${
-                          isLightMode
-                            ? "border-black/10 bg-black/[0.03] text-zinc-600"
-                            : "border-white/15 bg-white/[0.03] text-zinc-300"
-                        }`}
-                      >
-                        lectures
-                      </span>
+                    <div className="flex items-center justify-end">
                       <span
                         className={`rounded-full px-2.5 py-1 text-[11px] ${
                           isLightMode ? "bg-black/5 text-zinc-600" : "bg-black/30 text-zinc-300"
@@ -839,7 +857,7 @@ export default function PortfolioPage() {
                         alt={heroSlides[activeSlide].subtitle}
                         fill
                         sizes="(max-width: 1024px) 100vw, 42vw"
-                        className="h-full w-full object-contain object-center opacity-100 [mix-blend-mode:normal]"
+                        className="h-full w-full object-cover object-center opacity-100 [mix-blend-mode:normal]"
                         priority
                       />
                     </div>
@@ -893,6 +911,13 @@ export default function PortfolioPage() {
                 ref={aboutImageRef}
                 className="about-image relative aspect-[4/5] overflow-hidden rounded-[18px] bg-[linear-gradient(140deg,#d8c7ab_0%,#ba9874_24%,#272a30_62%,#11141d_100%)]"
               >
+                <Image
+                  src="/imgs/abdulmujeeb.png"
+                  alt="Abdul Mujeeb"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_25%,#ffffff30,transparent_38%),radial-gradient(circle_at_80%_72%,#00000070,transparent_40%)]" />
               </div>
 
@@ -950,7 +975,7 @@ export default function PortfolioPage() {
               </h4>
 
               <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
-                {aboutSpecialties.slice(0, 8).map((item, index) => (
+                {aboutSpecialties.slice(0, 8).map((item) => (
                   <p
                     key={item}
                     className={`about-skill-card flex items-start gap-2 rounded-xl border px-3 py-2 text-sm leading-6 ${
@@ -1043,21 +1068,6 @@ export default function PortfolioPage() {
             </p>
           </Reveal>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-2.5">
-            {workFilters.map((filter, index) => (
-              <button
-                key={filter}
-                className={`rounded-full px-4 py-1.5 text-xs font-medium transition ${
-                  index === 0
-                    ? "bg-yellow-400 text-zinc-900"
-                    : "bg-white/[0.04] text-zinc-300 hover:bg-white/[0.08]"
-                }`}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
-
           <div className="relative mt-8 space-y-8 pl-8 [--timeline-x:0.75rem] [--timeline-offset:2rem] sm:pl-10 sm:[--timeline-x:1rem] sm:[--timeline-offset:2.5rem]">
             <div className="absolute bottom-3 top-2 left-[var(--timeline-x)] w-px bg-white/10" />
             {workExperiences.map((item, index) => (
@@ -1091,13 +1101,13 @@ export default function PortfolioPage() {
                       {item.previews.map((preview, previewIndex) => (
                         <div
                           key={`${preview}-${previewIndex}`}
-                          className="flex aspect-[16/10] items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-zinc-900"
+                          className="relative aspect-[16/10] overflow-hidden rounded-lg border border-white/10 bg-zinc-900"
                         >
                           <Image
                             src={preview}
                             alt={`${item.company} preview ${previewIndex + 1}`}
-                            width={92}
-                            height={22}
+                            fill
+                            className="object-cover"
                           />
                         </div>
                       ))}
@@ -1213,10 +1223,10 @@ export default function PortfolioPage() {
                 </p>
               </div>
               <a
-                href="mailto:mujeebabdul525@gmail.com"
+                href="mailto:info@abdulmujeebahsan.com"
                 className="rounded-full bg-yellow-400 px-5 py-3 text-xs font-semibold text-zinc-900 transition hover:brightness-110"
               >
-                mujeebabdul525@gmail.com
+                info@abdulmujeebahsan.com
               </a>
             </div>
             <div className={`mt-3 flex flex-wrap gap-2 text-xs ${isLightMode ? "text-zinc-600" : "text-zinc-400"}`}>
@@ -1281,7 +1291,7 @@ export default function PortfolioPage() {
 
                 <div className="mt-6 flex flex-wrap gap-2.5">
                   <a
-                    href="mailto:mujeebabdul525@gmail.com"
+                    href="mailto:info@abdulmujeebahsan.com"
                     className="rounded-xl bg-yellow-400 px-5 py-3 text-xs font-semibold tracking-wide text-zinc-900 transition hover:brightness-110"
                   >
                     Start a Project
@@ -1327,10 +1337,10 @@ export default function PortfolioPage() {
                   </p>
                   <div className="mt-3 space-y-2 text-sm">
                     <a
-                      href="mailto:mujeebabdul525@gmail.com"
+                      href="mailto:info@abdulmujeebahsan.com"
                       className={`block transition ${isLightMode ? "text-zinc-700 hover:text-zinc-900" : "text-zinc-300 hover:text-white"}`}
                     >
-                      mujeebabdul525@gmail.com
+                      info@abdulmujeebahsan.com
                     </a>
                     <a
                       href="tel:+923424201891"
