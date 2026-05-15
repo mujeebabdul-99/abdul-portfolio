@@ -192,8 +192,8 @@ export const workExperiences = [
     summary:
       "Building, customizing, and maintaining WordPress websites with modern UI/UX, performance optimization, and custom plugin workflows.",
     cta: "View Experience",
-    previews: ["/next.svg", "/vercel.svg", "/globe.svg", "/file.svg"],
-    tags: ["WordPress", "WooCommerce", "PHP", "JavaScript", "Figma", "Speed Optimization"],
+    previews: ["/imgs/1.png", "/imgs/2.png", "/imgs/3.png", "/imgs/4.png"],
+    tags: ["WordPress", "WooCommerce", "React", "Next.js", "PHP", "JavaScript", "Elementor", "Gutenberg", "Shopify", "Webflow", "Figma", "Speed Optimization", "SEO", "Custom Plugins"],
   },
   {
     company: "Freelance",
