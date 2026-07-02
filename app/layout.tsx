@@ -40,8 +40,8 @@ export const metadata: Metadata = {
   authors: [{ name: "Abdul Mujeeb Ahsan", url: "https://abdulmujeebahsan.com" }],
   creator: "Abdul Mujeeb Ahsan",
   icons: {
-    icon: [{ url: "/imgs/site-icon.jpg", type: "image/jpeg" }],
-    apple: "/imgs/site-icon.jpg",
+    icon: [{ url: "/imgs/site-icon.png", type: "image/png" }],
+    apple: "/imgs/site-icon.png",
   },
   openGraph: {
     type: "website",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
       "Full-stack web developer specialized in WordPress, WooCommerce, React, and Next.js. Custom themes, plugins, and high-performance business websites.",
     images: [
       {
-        url: "/imgs/site-icon.jpg",
+        url: "/imgs/site-icon.png",
         width: 512,
         height: 512,
         alt: "Abdul Mujeeb Ahsan",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title: "Abdul Mujeeb Ahsan | Full-Stack WordPress Developer",
     description:
       "WordPress full-stack developer building fast, SEO-friendly websites with React and Next.js.",
-    images: ["/imgs/site-icon.jpg"],
+    images: ["/imgs/site-icon.png"],
   },
   robots: {
     index: true,
