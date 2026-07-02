@@ -912,7 +912,7 @@ export default function PortfolioPage() {
                 className="about-image relative aspect-[4/5] overflow-hidden rounded-[18px] bg-[linear-gradient(140deg,#d8c7ab_0%,#ba9874_24%,#272a30_62%,#11141d_100%)]"
               >
                 <Image
-                  src="/imgs/site-icon.jpg"
+                  src="/imgs/abdulmujeeb.png"
                   alt="Abdul Mujeeb"
                   fill
                   className="object-cover object-top"
