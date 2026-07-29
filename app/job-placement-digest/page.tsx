@@ -21,7 +21,7 @@ export default function JobPlacementDigestPage() {
           <h1 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Personal Statement
           </h1>
-          <p className="mt-4 text-sm text-zinc-500">Abdul Mujeeb Ahsan · Draft v2</p>
+          <p className="mt-4 text-sm text-zinc-500">Abdul Mujeeb Ahsan · Draft v3</p>
         </header>
 
         <div className="space-y-6 text-base leading-relaxed text-zinc-300 sm:text-lg">
@@ -51,9 +51,13 @@ export default function JobPlacementDigestPage() {
               one-off fixes.
             </li>
             <li>
-              A custom form builder with live preview — owned end to end, from data structure
-              and rendering logic through to the editor experience developers and content teams
-              actually use.
+              A Memorial Tribute Editor — a membership mini-SaaS where end users register,
+              choose a plan (Keepsake, Legacy, or Eternal), and create memorial tributes using
+              prebuilt Elementor templates with a live preview as they fill the form. I converted
+              the client&apos;s Figma designs into Elementor, made each template dynamic with ACF
+              (custom post type + field groups), built the front-end submission flow, and added
+              the live preview editor. Keepsake unlocks 1 template, Legacy 3, and Eternal 6 — so
+              the client can sell prebuilt tribute designs as a subscription product on her site.
             </li>
           </ul>
 
