@@ -21,7 +21,7 @@ export default function JobPlacementDigestPage() {
           <h1 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Personal Statement
           </h1>
-          <p className="mt-4 text-sm text-zinc-500">Abdul Mujeeb Ahsan · Draft v3</p>
+          <p className="mt-4 text-sm text-zinc-500">Abdul Mujeeb Ahsan · Final</p>
         </header>
 
         <div className="space-y-6 text-base leading-relaxed text-zinc-300 sm:text-lg">
@@ -51,13 +51,12 @@ export default function JobPlacementDigestPage() {
               one-off fixes.
             </li>
             <li>
-              A Memorial Tribute Editor — a membership mini-SaaS where end users register,
-              choose a plan (Keepsake, Legacy, or Eternal), and create memorial tributes using
-              prebuilt Elementor templates with a live preview as they fill the form. I converted
-              the client&apos;s Figma designs into Elementor, made each template dynamic with ACF
-              (custom post type + field groups), built the front-end submission flow, and added
-              the live preview editor. Keepsake unlocks 1 template, Legacy 3, and Eternal 6 — so
-              the client can sell prebuilt tribute designs as a subscription product on her site.
+              I architected the Memorial Tribute Editor — a self-serve subscription platform
+              where end users register, select a membership tier (Keepsake, Legacy, or Eternal),
+              pick from prebuilt Elementor templates, and fill a dynamic front-end form with live
+              preview. Using ACF custom post types and real-time JS updates, users can publish
+              tributes instantly without developer involvement — transforming the client&apos;s
+              manual workflow into a scalable, revenue-generating product.
             </li>
           </ul>
 
