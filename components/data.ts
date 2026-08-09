@@ -10,7 +10,7 @@ export const stats = [
   { label: "Experience", value: "6+ Years" },
   { label: "Followers", value: "1,590+" },
   { label: "Connections", value: "1,492+" },
-  { label: "Core Focus", value: "WordPress + React" },
+  { label: "Core Focus", value: "AI-ready WordPress" },
 ];
 
 export const services = [
@@ -62,96 +62,89 @@ export const projects = [
 
 export const testimonials = [
   {
-    platform: "Upwork",
-    name: "Sarah Johnson",
-    initials: "SJ",
+    platform: "Fiverr",
+    name: "hardcore_pop",
+    initials: "HP",
     quote:
-      "Abdul delivered exceptional work on our e-commerce platform. His attention to detail and technical expertise made our project a huge success.",
+      "Abdul is a pro with a good eye. Communication was easy and responsive. I was impressed how quickly and how well he understood my brief and delivered on time.",
+  },
+  {
+    platform: "Upwork",
+    name: "Gutenberg FSE Client",
+    initials: "GF",
+    quote:
+      "Abdul did great work setting up a Gutenberg Block based website from scratch with an intended inspirational site in mind. Communicates well, provides good research and rationale and would work with him again. Definitely recommend!",
   },
   {
     platform: "Fiverr",
-    name: "Michael Chen",
-    initials: "MC",
+    name: "kevfra54",
+    initials: "KF",
     quote:
-      "Outstanding React developer! Built our entire frontend from scratch with beautiful animations and perfect responsiveness.",
+      "We have done a few projects now and he always delivers what is needed. No bugs and no surprises. The proof is in my website, which is quite nice. I have more work coming in the future and will certainly use Abdul again.",
   },
   {
     platform: "Upwork",
-    name: "Emily Rodriguez",
-    initials: "ER",
+    name: "English Teaching Client",
+    initials: "ET",
     quote:
-      "Abdul's UI/UX skills are top-notch. He transformed our outdated website into a modern, user-friendly experience.",
-  },
-  {
-    platform: "LinkedIn",
-    name: "David Kim",
-    initials: "DK",
-    quote:
-      "Professional, reliable, and delivers quality work on time. Highly recommend for any web development project.",
-  },
-  {
-    platform: "Google",
-    name: "Maria Garcia",
-    initials: "MG",
-    quote:
-      "Incredible attention to detail and great communication throughout the project. Will definitely work with him again!",
-  },
-  {
-    platform: "Facebook",
-    name: "James Wilson",
-    initials: "JW",
-    quote:
-      "Best developer I've worked with! Clean code, modern design, and excellent project management skills.",
-  },
-  {
-    platform: "Twitter",
-    name: "Kevin O'Brien",
-    initials: "KO",
-    quote:
-      "Abdul's expertise in React and Next.js is exceptional. Delivered a lightning-fast, SEO-optimized website.",
-  },
-  {
-    platform: "Upwork",
-    name: "Robert Brown",
-    initials: "RB",
-    quote:
-      "Professional service from start to finish. The final product exceeded all our expectations and requirements.",
+      "I had a great experience working with Abdul from day one. He was prompt, friendly, and patient — especially since I don't have much experience with website development. The website turned out great! He truly understood my vision and even improved on it. I would definitely recommend Abdul.",
   },
   {
     platform: "Fiverr",
-    name: "Sophie Martin",
-    initials: "SM",
+    name: "placd_kollektiv",
+    initials: "PK",
     quote:
-      "Fantastic work on our startup's landing page. The conversion rate increased by 40% after the redesign!",
-  },
-  {
-    platform: "Fiverr",
-    name: "Lisa Thompson",
-    initials: "LT",
-    quote:
-      "Amazing work on our mobile app! The performance optimizations and smooth animations exceeded our expectations.",
+      "This was my second time working with Abdul on some updates and was again outstanding service and understanding of needs. Thanks a lot!",
   },
   {
     platform: "Upwork",
-    name: "Alex Parker",
-    initials: "AP",
+    name: "WooCommerce Client",
+    initials: "WC",
     quote:
-      "Abdul's full-stack expertise saved us time and money. He handled both frontend and backend perfectly.",
+      "Working with Abdul was a fantastic experience. He is incredibly dedicated and hardworking. We had complex technical tasks involving WooCommerce, custom contact forms, and website layout, and he made sure everything was resolved perfectly. Highly recommend!",
   },
   {
-    platform: "LinkedIn",
-    name: "Anna Kowalski",
-    initials: "AK",
+    platform: "Fiverr",
+    name: "alberthadi222",
+    initials: "AH",
     quote:
-      "Abdul understands modern web development like no other. Our site performance improved dramatically!",
+      "I am extremely pleased to share my gratitude for the outstanding service provided by Abdul Mujeeb. This is the second project he has completed for me, and once again his professionalism, friendliness, and commitment to excellence have exceeded all expectations.",
+  },
+  {
+    platform: "Upwork",
+    name: "Design Enhancement Client",
+    initials: "DE",
+    quote:
+      "Thank you so much for your collaboration with us — it was amazing!",
   },
 ];
 
 export const faqs = [
-  "Do you build mobile and web products?",
-  "Can you build AI-powered automation?",
-  "Do you provide code reviews and mentoring?",
-  "Which cloud platforms do you use?",
+  {
+    question: "How do you handle requirements and project scoping?",
+    answer:
+      "I start with discovery — goals, scope, constraints, and success criteria. I document deliverables and assumptions upfront so the build stays aligned from day one.",
+  },
+  {
+    question: "How do you approach design and technical planning?",
+    answer:
+      "I map information architecture, UX flow, and the WordPress stack (theme, blocks, plugins, integrations) before coding, so implementation stays clean and maintainable.",
+  },
+  {
+    question: "What does your development process look like?",
+    answer:
+      "I build in iterative milestones — core structure first, then features and integrations — with regular demos so you can review progress and request adjustments early.",
+  },
+  {
+    question: "How do you ensure quality before launch?",
+    answer:
+      "I test across devices and browsers, verify forms and WooCommerce flows, and check performance and SEO basics, then resolve issues before go-live.",
+  },
+  {
+    question: "Do you support deployment and ongoing maintenance?",
+    answer:
+      "Yes. I handle launch, handoff, and training, and I can provide post-launch fixes, updates, and maintenance so your site stays secure and easy to manage.",
+  },
 ];
 
 export const aboutSpecialties = [

@@ -21,21 +21,22 @@ const sora = Sora({
 export const metadata: Metadata = {
   metadataBase: new URL("https://abdulmujeebahsan.com"),
   title: {
-    default: "Abdul Mujeeb Ahsan | Full-Stack WordPress Developer",
+    default: "Abdul Mujeeb Ahsan | WordPress Engineer",
     template: "%s | Abdul Mujeeb Ahsan",
   },
   description:
-    "Abdul Mujeeb Ahsan is a full-stack web developer specialized in WordPress, WooCommerce, React, and Next.js. Building fast, SEO-friendly websites, custom themes, plugins, and conversion-focused UI.",
+    "Abdul Mujeeb Ahsan is a WordPress Engineer building AI-ready websites — custom themes, plugins, WooCommerce, and modern integrations with React and Next.js.",
   keywords: [
     "Abdul Mujeeb Ahsan",
+    "WordPress Engineer",
     "WordPress developer",
-    "full-stack web developer",
+    "AI-ready WordPress",
     "WooCommerce developer",
-    "React developer",
-    "Next.js developer",
-    "WordPress designer Islamabad",
     "custom WordPress themes",
     "WordPress plugins",
+    "React developer",
+    "Next.js developer",
+    "WordPress developer Islamabad",
   ],
   authors: [{ name: "Abdul Mujeeb Ahsan", url: "https://abdulmujeebahsan.com" }],
   creator: "Abdul Mujeeb Ahsan",
@@ -48,9 +49,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://abdulmujeebahsan.com",
     siteName: "Abdul Mujeeb Ahsan Portfolio",
-    title: "Abdul Mujeeb Ahsan | Full-Stack WordPress Developer",
+    title: "Abdul Mujeeb Ahsan | WordPress Engineer",
     description:
-      "Full-stack web developer specialized in WordPress, WooCommerce, React, and Next.js. Custom themes, plugins, and high-performance business websites.",
+      "WordPress Engineer building AI-ready sites — custom systems, WooCommerce, and modern integrations.",
     images: [
       {
         url: "/imgs/site-icon.png",
@@ -62,9 +63,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Abdul Mujeeb Ahsan | Full-Stack WordPress Developer",
+    title: "Abdul Mujeeb Ahsan | WordPress Engineer",
     description:
-      "WordPress full-stack developer building fast, SEO-friendly websites with React and Next.js.",
+      "WordPress Engineer building AI-ready websites with custom systems, WooCommerce, and modern integrations.",
     images: ["/imgs/site-icon.png"],
   },
   robots: {

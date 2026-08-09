@@ -715,14 +715,14 @@ export default function PortfolioPage() {
               <span className="h-1.5 w-1.5 rounded-full bg-zinc-500" />
             </p>
             <h1 className="font-display text-[2.5rem] leading-[1.03] font-semibold tracking-tight text-zinc-100 sm:text-[3.4rem] md:text-[4.4rem]">
-              Full-Stack Web Developer
+              WordPress Engineer
               <span className="block bg-gradient-to-r from-blue-500 via-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
-                specialized in WordPress
+                building AI-ready sites
               </span>
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-zinc-300 sm:text-base">
-              I build high-performing websites, custom CMS solutions, and conversion-focused user
-              interfaces using WordPress, React, and Next.js.
+              I build custom WordPress systems, WooCommerce stores, and AI-ready integrations —
+              using React and Next.js where they add real product value.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
               <a
@@ -945,14 +945,13 @@ export default function PortfolioPage() {
 
               <h3 className={`about-copy relative text-3xl leading-tight font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>
                 Hi, I&apos;m Abdul Mujeeb -
-                <span className="block text-yellow-400">Full-Stack Web Developer</span>
+                <span className="block text-yellow-400">WordPress Engineer</span>
               </h3>
 
               <p className={`about-copy mt-4 text-sm leading-7 ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
-                I&apos;m a Full-Stack Web Developer specialized in WordPress, with hands-on
-                experience building custom themes, plugins, and WooCommerce stores. I also work
-                across modern frontend stacks including React and Next.js for performance-focused
-                interfaces.
+                I&apos;m a WordPress Engineer with 6+ years building custom themes, plugins, and
+                WooCommerce stores. I design AI-ready WordPress systems and modern integrations —
+                and use React and Next.js when the product needs them.
               </p>
 
               <div className="about-copy mt-6 grid gap-2.5 sm:grid-cols-3">
@@ -962,7 +961,7 @@ export default function PortfolioPage() {
                 </div>
                 <div className={`rounded-xl border px-3 py-2 ${isLightMode ? "border-black/10 bg-white" : "border-white/10 bg-white/[0.03]"}`}>
                   <p className="text-xs uppercase tracking-wider text-yellow-400">Projects</p>
-                  <p className={`mt-1 text-sm font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>WordPress + React</p>
+                  <p className={`mt-1 text-sm font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>AI-ready WordPress</p>
                 </div>
                 <div className={`rounded-xl border px-3 py-2 ${isLightMode ? "border-black/10 bg-white" : "border-white/10 bg-white/[0.03]"}`}>
                   <p className="text-xs uppercase tracking-wider text-yellow-400">Focus</p>
@@ -1149,7 +1148,6 @@ export default function PortfolioPage() {
               speed={12}
               isLightMode={isLightMode}
             />
-            <TestimonialRow items={testimonials.slice(8, 12)} speed={11} isLightMode={isLightMode} />
           </div>
         </section>
 
@@ -1170,8 +1168,8 @@ export default function PortfolioPage() {
                 isLightMode ? "divide-black/10 border border-black/10" : "divide-white/10 border border-white/10"
               }`}
             >
-              {faqs.map((question, index) => (
-                <article key={question} className="px-5 py-4">
+              {faqs.map((faq, index) => (
+                <article key={faq.question} className="px-5 py-4">
                   <button
                     type="button"
                     onClick={() => setOpenFaqIndex((prev) => (prev === index ? null : index))}
@@ -1179,7 +1177,7 @@ export default function PortfolioPage() {
                       isLightMode ? "text-zinc-800" : "text-zinc-100"
                     }`}
                   >
-                    <span>{question}</span>
+                    <span>{faq.question}</span>
                     <FiChevronDown
                       className={`h-4 w-4 shrink-0 transition-transform duration-300 ${
                         openFaqIndex === index ? "rotate-180" : "rotate-0"
@@ -1197,10 +1195,7 @@ export default function PortfolioPage() {
                           isLightMode ? "text-zinc-600" : "text-zinc-300"
                         }`}
                       >
-                        <span className="mt-2 block">
-                          Yes. This is placeholder content designed to preserve the visual structure
-                          and interaction pattern from the reference design.
-                        </span>
+                        <span className="mt-2 block">{faq.answer}</span>
                       </motion.p>
                     ) : null}
                   </AnimatePresence>
@@ -1216,17 +1211,17 @@ export default function PortfolioPage() {
             >
               <div>
                 <p className={`text-sm ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
-                  Need WordPress + React development support?
+                  Need a WordPress Engineer for an AI-ready build?
                 </p>
                 <p className={`text-lg font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>
                   Let&apos;s discuss your next web project.
                 </p>
               </div>
               <a
-                href="mailto:info@abdulmujeebahsan.com"
+                href="mailto:hello@abdulmujeebahsan.com"
                 className="rounded-full bg-yellow-400 px-5 py-3 text-xs font-semibold text-zinc-900 transition hover:brightness-110"
               >
-                info@abdulmujeebahsan.com
+                hello@abdulmujeebahsan.com
               </a>
             </div>
             <div className={`mt-3 flex flex-wrap gap-2 text-xs ${isLightMode ? "text-zinc-600" : "text-zinc-400"}`}>
@@ -1291,7 +1286,7 @@ export default function PortfolioPage() {
 
                 <div className="mt-6 flex flex-wrap gap-2.5">
                   <a
-                    href="mailto:info@abdulmujeebahsan.com"
+                    href="mailto:hello@abdulmujeebahsan.com"
                     className="rounded-xl bg-yellow-400 px-5 py-3 text-xs font-semibold tracking-wide text-zinc-900 transition hover:brightness-110"
                   >
                     Start a Project
@@ -1337,10 +1332,10 @@ export default function PortfolioPage() {
                   </p>
                   <div className="mt-3 space-y-2 text-sm">
                     <a
-                      href="mailto:info@abdulmujeebahsan.com"
+                      href="mailto:hello@abdulmujeebahsan.com"
                       className={`block transition ${isLightMode ? "text-zinc-700 hover:text-zinc-900" : "text-zinc-300 hover:text-white"}`}
                     >
-                      info@abdulmujeebahsan.com
+                      hello@abdulmujeebahsan.com
                     </a>
                     <a
                       href="tel:+923424201891"
