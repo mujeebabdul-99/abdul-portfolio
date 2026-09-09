@@ -7,7 +7,7 @@ export const navItems = [
 ];
 
 export const stats = [
-  { label: "Experience", value: "6+ Years" },
+  { label: "Experience", value: "5+ Years" },
   { label: "Followers", value: "1,590+" },
   { label: "Connections", value: "1,492+" },
   { label: "Core Focus", value: "AI-ready WordPress" },
