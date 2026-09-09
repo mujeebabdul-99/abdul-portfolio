@@ -949,7 +949,7 @@ export default function PortfolioPage() {
               </h3>
 
               <p className={`about-copy mt-4 text-sm leading-7 ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
-                I&apos;m a WordPress Engineer with 5+ years building custom themes, plugins, and
+                I&apos;m a WordPress Engineer with 4+ years building custom themes, plugins, and
                 WooCommerce stores. I design AI-ready WordPress systems and modern integrations —
                 and use React and Next.js when the product needs them.
               </p>
@@ -957,7 +957,7 @@ export default function PortfolioPage() {
               <div className="about-copy mt-6 grid gap-2.5 sm:grid-cols-3">
                 <div className={`rounded-xl border px-3 py-2 ${isLightMode ? "border-black/10 bg-white" : "border-white/10 bg-white/[0.03]"}`}>
                   <p className="text-xs uppercase tracking-wider text-yellow-400">Experience</p>
-                  <p className={`mt-1 text-sm font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>5+ Years</p>
+                  <p className={`mt-1 text-sm font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>4+ Years</p>
                 </div>
                 <div className={`rounded-xl border px-3 py-2 ${isLightMode ? "border-black/10 bg-white" : "border-white/10 bg-white/[0.03]"}`}>
                   <p className="text-xs uppercase tracking-wider text-yellow-400">Projects</p>

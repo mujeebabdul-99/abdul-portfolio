@@ -26,7 +26,7 @@ export default function JobPlacementDigestPage() {
 
         <div className="space-y-6 text-base leading-relaxed text-zinc-300 sm:text-lg">
           <p>
-            I&apos;m a WordPress full-stack developer with 5+ years of experience shipping
+            I&apos;m a WordPress full-stack developer with 4+ years of experience shipping
             production websites, e-commerce stores, and custom CMS solutions. My core strength
             isn&apos;t memorizing syntax — it&apos;s architecting reliable solutions and
             delivering them using modern AI tools as a force multiplier in my daily workflow.
