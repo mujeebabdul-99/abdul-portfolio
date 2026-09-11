@@ -7,7 +7,7 @@ export const navItems = [
 ];
 
 export const stats = [
-  { label: "Experience", value: "4+ Years" },
+  { label: "Experience", value: "5+ Years" },
   { label: "Followers", value: "1,590+" },
   { label: "Connections", value: "1,492+" },
   { label: "Core Focus", value: "AI-ready WordPress" },
@@ -178,12 +178,12 @@ export const workFilters = [
 
 export const workExperiences = [
   {
-    company: "MaltaThemes",
+    company: "MaltaVisions",
     location: "Rawalpindi, Pakistan",
     role: "WordPress Full-Stack Developer",
     period: "September 2022 - Present",
     summary:
-      "Building, customizing, and maintaining WordPress websites with modern UI/UX, performance optimization, and custom plugin workflows.",
+      "Build and maintain custom WordPress and WooCommerce websites using PHP, JavaScript, ACF, Gutenberg, Elementor, and custom themes. Convert Figma designs into responsive sites and implement technical SEO, GA4/GTM tracking, and Core Web Vitals optimization.",
     cta: "View Experience",
     previews: ["/imgs/1.png", "/imgs/2.png", "/imgs/3.png", "/imgs/4.png"],
     tags: ["WordPress", "WooCommerce", "React", "Next.js", "PHP", "JavaScript", "Elementor", "Gutenberg", "Shopify", "Webflow", "Figma", "Speed Optimization", "SEO", "Custom Plugins"],

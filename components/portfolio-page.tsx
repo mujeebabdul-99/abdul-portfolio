@@ -715,7 +715,7 @@ export default function PortfolioPage() {
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.7)]" />
             </p>
             <h1 className="font-display text-[2.5rem] leading-[1.03] font-semibold tracking-tight text-zinc-100 sm:text-[3.4rem] md:text-[4.4rem]">
-              WordPress Engineer
+              WordPress Developer
               <span className="block bg-gradient-to-r from-blue-500 via-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
                 building AI-ready sites
               </span>
@@ -945,11 +945,11 @@ export default function PortfolioPage() {
 
               <h3 className={`about-copy relative text-3xl leading-tight font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>
                 Hi, I&apos;m Abdul Mujeeb -
-                <span className="block text-yellow-400">WordPress Engineer</span>
+                <span className="block text-yellow-400">WordPress Developer</span>
               </h3>
 
               <p className={`about-copy mt-4 text-sm leading-7 ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
-                I&apos;m a WordPress Engineer with 4+ years building custom themes, plugins, and
+                I&apos;m a WordPress Developer with 5+ years building custom themes, plugins, and
                 WooCommerce stores. I design AI-ready WordPress systems and modern integrations —
                 and use React and Next.js when the product needs them.
               </p>
@@ -957,7 +957,7 @@ export default function PortfolioPage() {
               <div className="about-copy mt-6 grid gap-2.5 sm:grid-cols-3">
                 <div className={`rounded-xl border px-3 py-2 ${isLightMode ? "border-black/10 bg-white" : "border-white/10 bg-white/[0.03]"}`}>
                   <p className="text-xs uppercase tracking-wider text-yellow-400">Experience</p>
-                  <p className={`mt-1 text-sm font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>4+ Years</p>
+                  <p className={`mt-1 text-sm font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>5+ Years</p>
                 </div>
                 <div className={`rounded-xl border px-3 py-2 ${isLightMode ? "border-black/10 bg-white" : "border-white/10 bg-white/[0.03]"}`}>
                   <p className="text-xs uppercase tracking-wider text-yellow-400">Projects</p>
@@ -1211,7 +1211,7 @@ export default function PortfolioPage() {
             >
               <div>
                 <p className={`text-sm ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
-                  Need a WordPress Engineer for an AI-ready build?
+                  Need a WordPress Developer for an AI-ready build?
                 </p>
                 <p className={`text-lg font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>
                   Let&apos;s discuss your next web project.

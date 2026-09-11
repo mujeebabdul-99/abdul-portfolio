@@ -33,7 +33,7 @@ export default function JobPlacementDigestPage() {
           </p>
 
           <p>
-            At MaltaThemes, I lead a team of 5–7 developers. My role goes beyond writing code:
+            At MaltaVisions, I lead a team of 5–7 developers. My role goes beyond writing code:
             I set technical direction, review architecture before it hits production, and step
             in strategically when the team hits complex blockers. I&apos;m responsible for how
             we build — not just what gets built — including code standards, reusable patterns,
@@ -62,7 +62,7 @@ export default function JobPlacementDigestPage() {
 
           <p>
             My stack centers on WordPress, WooCommerce, PHP, JavaScript, React, and Next.js.
-            Alongside MaltaThemes, I&apos;ve freelanced since 2019 for remote clients — including
+            Alongside MaltaVisions, I&apos;ve freelanced since 2019 for remote clients — including
             international e-commerce and real-estate work — which keeps my delivery discipline
             sharp across different teams, timelines, and expectations.
           </p>

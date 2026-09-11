@@ -21,14 +21,14 @@ const sora = Sora({
 export const metadata: Metadata = {
   metadataBase: new URL("https://abdulmujeebahsan.com"),
   title: {
-    default: "Abdul Mujeeb Ahsan | WordPress Engineer",
+    default: "Abdul Mujeeb Ahsan | WordPress Developer",
     template: "%s | Abdul Mujeeb Ahsan",
   },
   description:
-    "Abdul Mujeeb Ahsan is a WordPress Engineer building AI-ready websites — custom themes, plugins, WooCommerce, and modern integrations with React and Next.js.",
+    "Abdul Mujeeb Ahsan is a WordPress Developer with 5+ years building AI-ready websites — custom themes, plugins, WooCommerce, and modern integrations with React and Next.js.",
   keywords: [
     "Abdul Mujeeb Ahsan",
-    "WordPress Engineer",
+    "WordPress Developer",
     "WordPress developer",
     "AI-ready WordPress",
     "WooCommerce developer",
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://abdulmujeebahsan.com",
     siteName: "Abdul Mujeeb Ahsan Portfolio",
-    title: "Abdul Mujeeb Ahsan | WordPress Engineer",
+    title: "Abdul Mujeeb Ahsan | WordPress Developer",
     description:
-      "WordPress Engineer building AI-ready sites — custom systems, WooCommerce, and modern integrations.",
+      "WordPress Developer building AI-ready sites — custom systems, WooCommerce, and modern integrations.",
     images: [
       {
         url: "/imgs/site-icon.png",
@@ -63,9 +63,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Abdul Mujeeb Ahsan | WordPress Engineer",
+    title: "Abdul Mujeeb Ahsan | WordPress Developer",
     description:
-      "WordPress Engineer building AI-ready websites with custom systems, WooCommerce, and modern integrations.",
+      "WordPress Developer building AI-ready websites with custom systems, WooCommerce, and modern integrations.",
     images: ["/imgs/site-icon.png"],
   },
   robots: {
