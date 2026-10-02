@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   authors: [{ name: "Abdul Mujeeb Ahsan", url: "https://abdulmujeebahsan.com" }],
   creator: "Abdul Mujeeb Ahsan",
   icons: {
-    icon: [{ url: "/imgs/site-icon.png", type: "image/png" }],
-    apple: "/imgs/site-icon.png",
+    icon: [{ url: "/imgs/profile-icon.png", type: "image/png" }],
+    apple: "/imgs/profile-icon.png",
   },
   openGraph: {
     type: "website",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
       "WordPress Developer building AI-ready sites — custom systems, WooCommerce, and modern integrations.",
     images: [
       {
-        url: "/imgs/site-icon.png",
+        url: "/imgs/profile-icon.png",
         width: 512,
         height: 512,
         alt: "Abdul Mujeeb Ahsan",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "Abdul Mujeeb Ahsan | WordPress Developer",
     description:
       "WordPress Developer building AI-ready websites with custom systems, WooCommerce, and modern integrations.",
-    images: ["/imgs/site-icon.png"],
+    images: ["/imgs/profile-icon.png"],
   },
   robots: {
     index: true,
