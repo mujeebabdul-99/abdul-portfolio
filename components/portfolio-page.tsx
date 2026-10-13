@@ -162,6 +162,30 @@ const techRows = [
 
 const heroSlides = [
   {
+    title: "Product website for a social feed platform with clear feature storytelling and conversion paths.",
+    subtitle: "Easy Social Feed",
+    badge: "PRODUCT WEBSITE",
+    metrics: [
+      { value: "WordPress", label: "Custom theme and content structure" },
+      { value: "UX Focus", label: "Feature clarity and user journeys" },
+      { value: "Performance", label: "Responsive, production-ready build" },
+    ],
+    image: "/images/portfolio-easysocial.png",
+    url: "https://easysocialfeed.com/",
+  },
+  {
+    title: "Figma-to-WordPress marketing site for an AI product brand with polished UI and responsive layouts.",
+    subtitle: "Specter AI",
+    badge: "FIGMA TO WORDPRESS",
+    metrics: [
+      { value: "Figma → WP", label: "Design-accurate implementation" },
+      { value: "Custom UI", label: "Reusable sections and components" },
+      { value: "Responsive", label: "Desktop-to-mobile consistency" },
+    ],
+    image: "/images/portfolio-specter.jpg",
+    url: "https://specterai.ai/",
+  },
+  {
     title: "Accessible healthcare platform connecting digital health providers and APAC users.",
     subtitle: "Peach Health Asia",
     badge: "HEALTHCARE PLATFORM",
@@ -198,37 +222,13 @@ const heroSlides = [
     url: "https://kineticmethod.com/",
   },
   {
-    title: "Student-athlete mentorship website built around outcomes and admissions strategy.",
-    subtitle: "Athlete Advisors",
-    badge: "SPORTS EDUCATION",
-    metrics: [
-      { value: "3 Divisions", label: "Sports, Academic, and ECA pathways" },
-      { value: "Families", label: "Parent-aligned decision journey UX" },
-      { value: "Clear CTA", label: "Story and contact conversion flow" },
-    ],
-    image: "/images/portfolio-04.png",
-    url: "https://www.aaamentors.com/",
-  },
-  {
-    title: "Somatic healing personal brand site with high-trust storytelling and lead magnet.",
-    subtitle: "Leanna Hunt",
-    badge: "PERSONAL BRAND",
-    metrics: [
-      { value: "Membership", label: "Recurring community-based offer" },
-      { value: "Podcast", label: "Content-driven authority channel" },
-      { value: "Lead Magnet", label: "Survival response map capture flow" },
-    ],
-    image: "/images/portfolio-05.png",
-    url: "https://leannahunt.com/",
-  },
-  {
     title: "Handcrafted furniture and epoxy e-commerce narrative with premium craft positioning.",
     subtitle: "Sovza Wooden Dreams",
     badge: "E-COMMERCE STORE",
     metrics: [
       { value: "100%", label: "Handmade product narrative" },
       { value: "300+", label: "Custom projects showcased" },
-      { value: "Slovenian Wood", label: "Localized material trust signal" },
+      { value: "WooCommerce", label: "Storefront and product storytelling" },
     ],
     image: "/images/portfolio-06.png",
     url: "https://sovza.si/en/home/",
@@ -715,27 +715,29 @@ export default function PortfolioPage() {
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.7)]" />
             </p>
             <h1 className="font-display text-[2.5rem] leading-[1.03] font-semibold tracking-tight text-zinc-100 sm:text-[3.4rem] md:text-[4.4rem]">
-              WordPress Developer
+              Web Developer
               <span className="block bg-gradient-to-r from-blue-500 via-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
-                building AI-ready sites
+                &amp; Digital Designer
               </span>
             </h1>
-            <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-zinc-300 sm:text-base">
-              I build custom WordPress systems, WooCommerce stores, and AI-ready integrations —
-              using React and Next.js where they add real product value.
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-zinc-300 sm:text-base">
+              I design and develop polished digital experiences, from thoughtful UI design to
+              responsive websites and custom web functionality. With 5+ years of experience, I work
+              across WordPress, PHP, JavaScript, and modern frontend technologies — combining
+              Figma-based design, custom development, API integrations, and AI-assisted workflows.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
               <a
-                href="#services"
+                href="#work"
                 className="rounded-xl bg-yellow-400 px-5 py-2.5 text-xs font-semibold tracking-wide text-zinc-900 transition hover:brightness-110"
               >
-                View My Services
+                View My Work
               </a>
               <a
                 href="#contact"
                 className="rounded-xl border border-yellow-300/40 bg-yellow-300/5 px-5 py-2.5 text-xs font-semibold tracking-wide text-yellow-100 transition hover:bg-yellow-300/10"
               >
-                Get in Touch
+                Let&apos;s Talk
               </a>
             </div>
           </Reveal>
@@ -945,13 +947,15 @@ export default function PortfolioPage() {
 
               <h3 className={`about-copy relative text-3xl leading-tight font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>
                 Hi, I&apos;m Abdul Mujeeb -
-                <span className="block text-yellow-400">WordPress Developer</span>
+                <span className="block text-yellow-400">Web Developer &amp; Digital Designer</span>
               </h3>
 
               <p className={`about-copy mt-4 text-sm leading-7 ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
-                I&apos;m a WordPress Developer with 5+ years building custom themes, plugins, and
-                WooCommerce stores. I design AI-ready WordPress systems and modern integrations —
-                and use React and Next.js when the product needs them.
+                I&apos;m a web developer with 5+ years of experience translating designs into
+                polished, responsive websites and building custom WordPress functionality. I work
+                across PHP, JavaScript, React, Gutenberg, ACF, and WooCommerce — integrating APIs,
+                improving performance and usability, and using AI-assisted tools to move faster while
+                still reviewing, debugging, and validating every implementation.
               </p>
 
               <div className="about-copy mt-6 grid gap-2.5 sm:grid-cols-3">
@@ -960,12 +964,12 @@ export default function PortfolioPage() {
                   <p className={`mt-1 text-sm font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>5+ Years</p>
                 </div>
                 <div className={`rounded-xl border px-3 py-2 ${isLightMode ? "border-black/10 bg-white" : "border-white/10 bg-white/[0.03]"}`}>
-                  <p className="text-xs uppercase tracking-wider text-yellow-400">Projects</p>
-                  <p className={`mt-1 text-sm font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>AI-ready WordPress</p>
+                  <p className="text-xs uppercase tracking-wider text-yellow-400">Strength</p>
+                  <p className={`mt-1 text-sm font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>WordPress + Frontend</p>
                 </div>
                 <div className={`rounded-xl border px-3 py-2 ${isLightMode ? "border-black/10 bg-white" : "border-white/10 bg-white/[0.03]"}`}>
                   <p className="text-xs uppercase tracking-wider text-yellow-400">Focus</p>
-                  <p className={`mt-1 text-sm font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>Business Growth UX</p>
+                  <p className={`mt-1 text-sm font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>Design to Delivery</p>
                 </div>
               </div>
 
@@ -988,17 +992,18 @@ export default function PortfolioPage() {
               </div>
 
               <p className={`about-copy mt-5 text-sm leading-7 ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
-                Based in Islamabad, Pakistan, I focus on building scalable, responsive, and
-                business-driven web experiences with strong design execution and reliable technical
-                delivery. Let&apos;s build something impactful together.
+                Based in Islamabad, Pakistan, I help teams ship complete web experiences — from UI
+                direction and Figma implementation to custom functionality, integrations, and
+                maintainable WordPress systems. WordPress remains a core strength; React and Next.js
+                come in when the product needs them.
               </p>
 
               <div className="about-cta mt-7 flex flex-wrap items-center gap-2.5">
                 <a
-                  href="#services"
+                  href="#work"
                   className="rounded-xl bg-yellow-400 px-5 py-2.5 text-xs font-semibold tracking-wide text-zinc-900 transition hover:brightness-110"
                 >
-                  View Services
+                  View My Work
                 </a>
                 <a
                   href="#contact"
@@ -1008,7 +1013,7 @@ export default function PortfolioPage() {
                       : "border border-yellow-300/35 bg-yellow-300/5 text-yellow-100 hover:bg-yellow-300/10"
                   }`}
                 >
-                  Hire Now
+                  Let&apos;s Talk
                 </a>
                 <a
                   href="https://www.linkedin.com/in/abdul-mujeeb-36192b221/"
@@ -1037,9 +1042,9 @@ export default function PortfolioPage() {
                 <span>& Frameworks</span>
               </span>
             </h2>
-            <p className="mx-auto mt-6 max-w-[460px] text-center text-sm leading-7 text-zinc-400">
-              Building scalable solutions with cutting-edge tools across web, mobile, AI, and cloud
-              technologies
+            <p className="mx-auto mt-6 max-w-[520px] text-center text-sm leading-7 text-zinc-400">
+              Practical tools I use across WordPress, frontend development, integrations, performance,
+              and design-to-build workflows
             </p>
           </Reveal>
           <div
@@ -1211,7 +1216,7 @@ export default function PortfolioPage() {
             >
               <div>
                 <p className={`text-sm ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
-                  Need a WordPress Developer for an AI-ready build?
+                  Need a web developer for design, WordPress, or custom functionality?
                 </p>
                 <p className={`text-lg font-semibold ${isLightMode ? "text-zinc-900" : "text-zinc-100"}`}>
                   Let&apos;s discuss your next web project.
@@ -1277,11 +1282,11 @@ export default function PortfolioPage() {
                     isLightMode ? "text-zinc-900" : "text-white"
                   }`}
                 >
-                  Let&apos;s build a high-converting website for your business.
+                  Let&apos;s build a polished website for your business.
                 </p>
                 <p className={`mt-3 max-w-xl text-sm leading-7 ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
-                  From strategy to launch, I design and develop modern, fast, and SEO-ready web
-                  experiences that help brands grow with confidence.
+                  From Figma and UI direction to custom WordPress functionality, integrations, and
+                  launch — I design and develop responsive, maintainable web experiences.
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-2.5">

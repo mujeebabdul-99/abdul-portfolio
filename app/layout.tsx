@@ -21,22 +21,23 @@ const sora = Sora({
 export const metadata: Metadata = {
   metadataBase: new URL("https://abdulmujeebahsan.com"),
   title: {
-    default: "Abdul Mujeeb Ahsan | WordPress Developer",
+    default: "Abdul Mujeeb Ahsan | Web Developer & Digital Designer",
     template: "%s | Abdul Mujeeb Ahsan",
   },
   description:
-    "Abdul Mujeeb Ahsan is a WordPress Developer with 5+ years building AI-ready websites — custom themes, plugins, WooCommerce, and modern integrations with React and Next.js.",
+    "Abdul Mujeeb Ahsan is a web developer and digital designer with 5+ years of experience building responsive websites, custom WordPress functionality, Figma-to-WordPress implementations, API integrations, and modern frontend experiences.",
   keywords: [
     "Abdul Mujeeb Ahsan",
+    "Web Developer",
+    "Digital Designer",
     "WordPress Developer",
-    "WordPress developer",
-    "AI-ready WordPress",
     "WooCommerce developer",
+    "Figma to WordPress",
     "custom WordPress themes",
-    "WordPress plugins",
+    "Gutenberg blocks",
     "React developer",
     "Next.js developer",
-    "WordPress developer Islamabad",
+    "web developer Islamabad",
   ],
   authors: [{ name: "Abdul Mujeeb Ahsan", url: "https://abdulmujeebahsan.com" }],
   creator: "Abdul Mujeeb Ahsan",
@@ -49,9 +50,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://abdulmujeebahsan.com",
     siteName: "Abdul Mujeeb Ahsan Portfolio",
-    title: "Abdul Mujeeb Ahsan | WordPress Developer",
+    title: "Abdul Mujeeb Ahsan | Web Developer & Digital Designer",
     description:
-      "WordPress Developer building AI-ready sites — custom systems, WooCommerce, and modern integrations.",
+      "Web developer and digital designer building responsive websites, custom WordPress systems, and modern frontend experiences.",
     images: [
       {
         url: "/imgs/profile-icon.png",
@@ -63,9 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Abdul Mujeeb Ahsan | WordPress Developer",
+    title: "Abdul Mujeeb Ahsan | Web Developer & Digital Designer",
     description:
-      "WordPress Developer building AI-ready websites with custom systems, WooCommerce, and modern integrations.",
+      "Web developer and digital designer — WordPress, custom functionality, Figma-to-WordPress, and modern frontend.",
     images: ["/imgs/profile-icon.png"],
   },
   robots: {
@@ -73,7 +74,6 @@ export const metadata: Metadata = {
     follow: true,
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -10,7 +10,7 @@ export const stats = [
   { label: "Experience", value: "5+ Years" },
   { label: "Followers", value: "1,590+" },
   { label: "Connections", value: "1,492+" },
-  { label: "Core Focus", value: "AI-ready WordPress" },
+  { label: "Core Focus", value: "Design + Build" },
 ];
 
 export const services = [
@@ -128,17 +128,17 @@ export const faqs = [
   {
     question: "How do you approach design and technical planning?",
     answer:
-      "I map information architecture, UX flow, and the WordPress stack (theme, blocks, plugins, integrations) before coding, so implementation stays clean and maintainable.",
+      "I review the Figma or design direction, map the information architecture and WordPress stack (theme, blocks, plugins, integrations), then plan a clean implementation path before coding.",
   },
   {
     question: "What does your development process look like?",
     answer:
-      "I build in iterative milestones — core structure first, then features and integrations — with regular demos so you can review progress and request adjustments early.",
+      "I build in iterative milestones — structure first, then features and integrations — with regular demos so you can review progress and request adjustments early.",
   },
   {
     question: "How do you ensure quality before launch?",
     answer:
-      "I test across devices and browsers, verify forms and WooCommerce flows, and check performance and SEO basics, then resolve issues before go-live.",
+      "I test across devices and browsers, verify forms and key user flows, and check performance and SEO basics, then resolve issues before go-live.",
   },
   {
     question: "Do you support deployment and ongoing maintenance?",
@@ -148,21 +148,19 @@ export const faqs = [
 ];
 
 export const aboutSpecialties = [
-  "WordPress Full-Stack Development",
-  "Custom Themes & Plugin Development",
-  "WooCommerce Store Development",
-  "CMS Customization & Maintenance",
+  "WordPress, WooCommerce, PHP & JavaScript",
+  "Custom Themes, Plugins & ACF",
+  "Gutenberg Blocks with React & PHP",
+  "Figma-to-WordPress Implementation",
   "React & Next.js Frontend Development",
-  "Responsive UI Implementation from Figma",
-  "Speed Optimization & Performance Tuning",
-  "SEO-Friendly Website Architecture",
-  "JavaScript, jQuery, PHP, MySQL",
-  "HTML, CSS, Sass, Bootstrap",
-  "Gutenberg Blocks & Custom Post Types",
+  "REST APIs & Third-Party Integrations",
+  "Core Web Vitals & Technical SEO",
+  "AI-Assisted Development Workflows",
+  "Responsive UI from Design Systems",
+  "CMS Customization & Maintenance",
   "E-commerce Integrations and Workflows",
-  "UI/UX Design Collaboration",
-  "Canva & Adobe Illustrator Asset Design",
   "Troubleshooting & Debugging",
+  "HTML, CSS, Sass & Bootstrap",
   "Cross-Team Communication",
 ];
 
@@ -183,10 +181,10 @@ export const workExperiences = [
     role: "WordPress Full-Stack Developer",
     period: "September 2022 - Present",
     summary:
-      "Build and maintain custom WordPress and WooCommerce websites using PHP, JavaScript, ACF, Gutenberg, Elementor, and custom themes. Convert Figma designs into responsive sites and implement technical SEO, GA4/GTM tracking, and Core Web Vitals optimization.",
+      "Build and maintain custom WordPress and WooCommerce websites using PHP, JavaScript, ACF, Gutenberg, Elementor, and custom themes. Convert Figma designs into responsive sites, develop reusable Gutenberg blocks, and implement technical SEO, GA4/GTM tracking, and Core Web Vitals optimization.",
     cta: "View Experience",
     previews: ["/imgs/1.png", "/imgs/2.png", "/imgs/3.png", "/imgs/4.png"],
-    tags: ["WordPress", "WooCommerce", "React", "Next.js", "PHP", "JavaScript", "Elementor", "Gutenberg", "Shopify", "Webflow", "Figma", "Speed Optimization", "SEO", "Custom Plugins"],
+    tags: ["WordPress", "WooCommerce", "React", "Next.js", "PHP", "JavaScript", "Elementor", "Gutenberg", "ACF", "Figma", "Speed Optimization", "SEO", "Custom Plugins", "REST API"],
   },
   {
     company: "Freelance",
@@ -204,7 +202,7 @@ export const workExperiences = [
     period: "July 2022 - December 2022",
     summary:
       "Designed and developed e-commerce and real-estate websites, revamped existing projects, and produced design assets for marketing and plugins.",
-    tags: ["WordPress", "E-commerce", "Canva", "Adobe Illustrator", "Website Revamp"],
+    tags: ["WordPress", "E-commerce", "Figma", "Website Revamp", "Responsive Design"],
   },
   {
     company: "Monark Technologies",
