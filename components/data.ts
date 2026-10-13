@@ -8,7 +8,7 @@ export const navItems = [
 
 export const stats = [
   { label: "Experience", value: "5+ Years" },
-  { label: "Followers", value: "1,590+" },
+  { label: "Followers", value: "2200+" },
   { label: "Connections", value: "1,492+" },
   { label: "Core Focus", value: "Design + Build" },
 ];
@@ -87,7 +87,7 @@ export const testimonials = [
     name: "English Teaching Client",
     initials: "ET",
     quote:
-      "I had a great experience working with Abdul from day one. He was prompt, friendly, and patient — especially since I don't have much experience with website development. The website turned out great! He truly understood my vision and even improved on it. I would definitely recommend Abdul.",
+      "I had a great experience working with Abdul from day one. He was prompt, friendly, and patient, especially since I don't have much experience with website development. The website turned out great! He truly understood my vision and even improved on it. I would definitely recommend Abdul.",
   },
   {
     platform: "Fiverr",
@@ -115,7 +115,7 @@ export const testimonials = [
     name: "Design Enhancement Client",
     initials: "DE",
     quote:
-      "Thank you so much for your collaboration with us — it was amazing!",
+      "Thank you so much for your collaboration with us - it was amazing!",
   },
 ];
 
@@ -123,7 +123,7 @@ export const faqs = [
   {
     question: "How do you handle requirements and project scoping?",
     answer:
-      "I start with discovery — goals, scope, constraints, and success criteria. I document deliverables and assumptions upfront so the build stays aligned from day one.",
+      "I start with discovery: goals, scope, constraints, and success criteria. I document deliverables and assumptions upfront so the build stays aligned from day one.",
   },
   {
     question: "How do you approach design and technical planning?",
@@ -133,7 +133,7 @@ export const faqs = [
   {
     question: "What does your development process look like?",
     answer:
-      "I build in iterative milestones — structure first, then features and integrations — with regular demos so you can review progress and request adjustments early.",
+      "I build in iterative milestones: structure first, then features and integrations, with regular demos so you can review progress and request adjustments early.",
   },
   {
     question: "How do you ensure quality before launch?",

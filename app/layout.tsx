@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Abdul Mujeeb Ahsan | Web Developer & Digital Designer",
     description:
-      "Web developer and digital designer — WordPress, custom functionality, Figma-to-WordPress, and modern frontend.",
+      "Web developer and digital designer: WordPress, custom functionality, Figma-to-WordPress, and modern frontend.",
     images: ["/imgs/profile-icon.png"],
   },
   robots: {

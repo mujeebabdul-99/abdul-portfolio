@@ -723,7 +723,7 @@ export default function PortfolioPage() {
             <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-zinc-300 sm:text-base">
               I design and develop polished digital experiences, from thoughtful UI design to
               responsive websites and custom web functionality. With 5+ years of experience, I work
-              across WordPress, PHP, JavaScript, and modern frontend technologies — combining
+              across WordPress, PHP, JavaScript, and modern frontend technologies, combining
               Figma-based design, custom development, API integrations, and AI-assisted workflows.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
@@ -953,7 +953,7 @@ export default function PortfolioPage() {
               <p className={`about-copy mt-4 text-sm leading-7 ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
                 I&apos;m a web developer with 5+ years of experience translating designs into
                 polished, responsive websites and building custom WordPress functionality. I work
-                across PHP, JavaScript, React, Gutenberg, ACF, and WooCommerce — integrating APIs,
+                across PHP, JavaScript, React, Gutenberg, ACF, and WooCommerce, integrating APIs,
                 improving performance and usability, and using AI-assisted tools to move faster while
                 still reviewing, debugging, and validating every implementation.
               </p>
@@ -992,7 +992,7 @@ export default function PortfolioPage() {
               </div>
 
               <p className={`about-copy mt-5 text-sm leading-7 ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
-                Based in Islamabad, Pakistan, I help teams ship complete web experiences — from UI
+                Based in Islamabad, Pakistan, I help teams ship complete web experiences, from UI
                 direction and Figma implementation to custom functionality, integrations, and
                 maintainable WordPress systems. WordPress remains a core strength; React and Next.js
                 come in when the product needs them.
@@ -1286,7 +1286,7 @@ export default function PortfolioPage() {
                 </p>
                 <p className={`mt-3 max-w-xl text-sm leading-7 ${isLightMode ? "text-zinc-600" : "text-zinc-300"}`}>
                   From Figma and UI direction to custom WordPress functionality, integrations, and
-                  launch — I design and develop responsive, maintainable web experiences.
+                  launch. I design and develop responsive, maintainable web experiences.
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-2.5">
